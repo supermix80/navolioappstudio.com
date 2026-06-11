@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Privacy Policy — MedDay · Navolio App Studio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0c10;--bg2:#111318;--border:#1e2530;--text:#edf2f7;--muted:#7a8694;--gold:#fbbf24;--accent:#FF9500;--radius:14px;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{background:rgba(10,12,16,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(20px,5vw,80px);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#fbbf24,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-back{font-size:14px;color:var(--muted);text-decoration:none;}
+.nav-back:hover{color:var(--text);}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,8vw,80px) clamp(20px,5vw,40px);}
+.app-header{display:flex;align-items:center;gap:18px;margin-bottom:40px;padding:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.app-icon{width:56px;height:56px;border-radius:14px;background:rgba(255,149,0,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.app-info h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+.app-info p{font-size:14px;color:var(--muted);}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.meta-tag{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:var(--gold);}
+h2{font-size:20px;font-weight:800;margin:36px 0 12px;color:var(--text);}
+p,li{font-size:16px;color:var(--muted);margin-bottom:12px;}
+ul{padding-left:24px;margin-bottom:16px;}
+li{margin-bottom:6px;}
+strong{color:var(--text);font-weight:600;}
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px;}
+th{background:var(--bg2);color:var(--muted);font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top;}
+td:first-child{color:var(--text);font-weight:500;}
+.highlight-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 20px;margin:20px 0;}
+.highlight-box p{margin:0;color:var(--text);}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    Navolio App Studio
+  </a>
+  <a href="/privacy/" class="nav-back">← Tutte le Privacy Policy</a>
+</nav>
+
+<main>
+  <div class="app-header">
+    <div class="app-icon">💊</div>
+    <div class="app-info">
+      <h1>MedDay — Privacy Policy</h1>
+      <p>Navolio App Studio · Michele Navolio</p>
+    </div>
+  </div>
+
+  <div class="meta">
+    <span class="meta-tag">Versione 1.0</span>
+    <span class="meta-tag">Ultimo aggiornamento: 11 aprile 2026</span>
+    <span class="meta-tag">iOS 16+</span>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>In sintesi:</strong> MedDay non raccoglie alcun dato personale. Tutti i dati rimangono sul tuo dispositivo. Nessun server esterno, nessun tracker, nessun account richiesto.</p>
+  </div>
+
+  <p>Michele Navolio (di seguito "lo sviluppatore") ha sviluppato MedDay come app per la gestione delle terapie farmacologiche quotidiane, con modello freemium e acquisto opzionale in-app. Questo documento illustra le pratiche riguardo alla raccolta, all'utilizzo e alla divulgazione dei dati personali degli utenti dell'app.</p>
+
+  <h2>1. Dati memorizzati localmente</h2>
+  <p>MedDay salva i seguenti dati <strong>esclusivamente sul dispositivo</strong> tramite CoreData, e non lasciano mai l'iPhone:</p>
+  <table>
+    <tr><th>Tipo di dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Nomi dei farmaci inseriti dall'utente</td><td>CoreData locale</td><td>Gestione terapia</td></tr>
+    <tr><td>Orari e frequenza delle dosi</td><td>CoreData locale</td><td>Notifiche e promemoria</td></tr>
+    <tr><td>Storico conferme e dosi saltate</td><td>CoreData locale</td><td>Compliance e report PDF</td></tr>
+    <tr><td>Date di scadenza opzionali</td><td>CoreData locale</td><td>Avvisi scadenza farmaco</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <p><strong>Nessun dato lascia mai il dispositivo.</strong> MedDay funziona completamente offline.</p>
+
+  <h2>2. Notifiche locali</h2>
+  <p>MedDay utilizza <strong>UNUserNotificationCenter</strong> (notifiche locali iOS) per ricordarti le dosi. Le notifiche sono generate interamente sul dispositivo — nessun dato viene inviato a server esterni. Il permesso notifiche viene richiesto durante l'onboarding e può essere revocato in qualsiasi momento dalle Impostazioni iOS.</p>
+
+  <h2>3. Export PDF</h2>
+  <p>Il PDF di compliance generato dall'app contiene i tuoi dati di terapia (farmaci, date, percentuale compliance). È sotto il tuo controllo completo: puoi condividerlo con il medico tramite AirDrop, email o altre funzionalità standard di iOS. Lo sviluppatore non riceve né accede a questi PDF.</p>
+
+  <h2>4. Acquisti in-app</h2>
+  <p>Gli acquisti in-app (MedDay Premium) sono gestiti <strong>esclusivamente da Apple tramite StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+
+  <h2>5. Analytics e tracking</h2>
+  <p>MedDay <strong>non integra SDK di terze parti</strong> per analytics, advertising o tracciamento comportamentale. Zero dipendenze esterne.</p>
+
+  <h2>6. Dati dei minori</h2>
+  <p>MedDay non è destinata a utenti sotto i 13 anni e non raccoglie intenzionalmente dati di minori.</p>
+
+  <h2>7. Conformità GDPR</h2>
+  <ul>
+    <li><strong>Diritto alla cancellazione:</strong> Elimina l'app da Impostazioni iOS → Spazio iPhone → MedDay. Tutti i dati CoreData vengono eliminati definitivamente.</li>
+    <li><strong>Diritto di accesso:</strong> Tutti i tuoi dati sono visibili direttamente nell'app (tab Oggi, Storico, Impostazioni).</li>
+    <li><strong>Portabilità:</strong> Export PDF compliance disponibile dal tab Storico.</li>
+    <li><strong>Minimizzazione:</strong> Vengono salvati solo i dati strettamente necessari alla funzionalità dell'app.</li>
+  </ul>
+
+  <h2>8. Aggiornamenti futuri</h2>
+  <p>Se in versioni future verrà aggiunto il backup iCloud opzionale (CloudKit), questa Privacy Policy verrà aggiornata prima del rilascio. Poiché non raccogliamo dati, le eventuali modifiche riguarderanno esclusivamente nuove funzionalità opt-in.</p>
+
+  <h2>9. Modifiche a questa informativa</h2>
+  <p>In caso di modifiche significative, la data di "Ultimo aggiornamento" verrà aggiornata. Ti invitiamo a consultare questa pagina periodicamente.</p>
+
+  <h2>10. Contatti</h2>
+  <p><strong>Michele Navolio — Navolio App Studio</strong><br>
+  Email: <a href="mailto:privacy@navolioappstudio.com">privacy@navolioappstudio.com</a><br>
+  Web: <a href="https://navolioappstudio.github.io">navolioappstudio.github.io</a></p>
+
+  <hr style="border:none;border-top:1px solid var(--border);margin:48px 0 32px;">
+
+  <h2>Privacy Policy — English</h2>
+
+  <p><strong>Last updated: April 11, 2026</strong></p>
+
+  <p>MedDay is developed by Michele Navolio (Navolio App Studio). This document explains our practices regarding the collection, use, and disclosure of personal data.</p>
+
+  <div class="highlight-box">
+    <p><strong>Summary:</strong> MedDay does not collect any personal data. All data stays on your device. No external servers, no trackers, no account required.</p>
+  </div>
+
+  <h2>1. Data stored locally</h2>
+  <table>
+    <tr><th>Data type</th><th>Storage</th><th>Purpose</th></tr>
+    <tr><td>Medication names entered by the user</td><td>Local CoreData</td><td>Therapy management</td></tr>
+    <tr><td>Dose times and frequency</td><td>Local CoreData</td><td>Notifications and reminders</td></tr>
+    <tr><td>History of confirmed and missed doses</td><td>Local CoreData</td><td>Compliance and PDF report</td></tr>
+    <tr><td>Optional expiry dates</td><td>Local CoreData</td><td>Expiry warnings</td></tr>
+    <tr><td>Premium status</td><td>Local UserDefaults</td><td>Feature gating</td></tr>
+  </table>
+  <p><strong>No data ever leaves your device.</strong> MedDay works entirely offline.</p>
+
+  <h2>2. Local notifications</h2>
+  <p>MedDay uses iOS local notifications (UNUserNotificationCenter) to remind you about your doses. Notifications are generated entirely on your device — no data is sent to any external server.</p>
+
+  <h2>3. PDF export</h2>
+  <p>The compliance PDF generated by the app contains your therapy data. It is entirely under your control: you can share it with your doctor via AirDrop, email, or standard iOS features. The developer does not receive or access these PDFs.</p>
+
+  <h2>4. In-app purchases</h2>
+  <p>In-app purchases (MedDay Premium) are handled exclusively by Apple via StoreKit 2. The developer does not collect payment data.</p>
+
+  <h2>5. Analytics and tracking</h2>
+  <p>MedDay <strong>does not include any third-party SDKs</strong> for analytics, advertising, or behavioral tracking. Zero external dependencies.</p>
+
+  <h2>6. Children's data</h2>
+  <p>MedDay is not intended for users under the age of 13 and does not knowingly collect data from minors.</p>
+
+  <h2>7. GDPR rights</h2>
+  <ul>
+    <li><strong>Right to erasure:</strong> Delete the app from iOS Settings → iPhone Storage → MedDay. All CoreData is permanently deleted.</li>
+    <li><strong>Right of access:</strong> All your data is visible directly in the app (Today, History, Settings tabs).</li>
+    <li><strong>Portability:</strong> PDF compliance export available from the History tab.</li>
+  </ul>
+
+  <h2>8. Contact</h2>
+  <p><strong>Michele Navolio — Navolio App Studio</strong><br>
+  Email: <a href="mailto:privacy@navolioappstudio.com">privacy@navolioappstudio.com</a><br>
+  Web: <a href="https://navolioappstudio.github.io">navolioappstudio.github.io</a></p>
+</main>
+
+<footer>© 2026 Navolio App Studio · Michele Navolio · <a href="/">navolioappstudio.github.io</a></footer>
+</body>
+</html>

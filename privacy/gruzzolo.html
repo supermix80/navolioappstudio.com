@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Privacy Policy — Gruzzolo · Navolio App Studio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0c10;--bg2:#111318;--border:#1e2530;--text:#edf2f7;--muted:#7a8694;--gold:#fbbf24;--radius:14px;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{background:rgba(10,12,16,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(20px,5vw,80px);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#fbbf24,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-back{font-size:14px;color:var(--muted);text-decoration:none;}
+.nav-back:hover{color:var(--text);}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,8vw,80px) clamp(20px,5vw,40px);}
+.app-header{display:flex;align-items:center;gap:18px;margin-bottom:40px;padding:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.app-icon{width:56px;height:56px;border-radius:14px;background:rgba(0,200,150,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.app-info h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+.app-info p{font-size:14px;color:var(--muted);}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.meta-tag{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:var(--gold);}
+h2{font-size:20px;font-weight:800;margin:36px 0 12px;}
+p,li{font-size:16px;color:var(--muted);margin-bottom:12px;}
+ul{padding-left:24px;margin-bottom:16px;}
+li{margin-bottom:6px;}
+strong{color:var(--text);font-weight:600;}
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px;}
+th{background:var(--bg2);color:var(--muted);font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top;}
+td:first-child{color:var(--text);font-weight:500;}
+.highlight-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 20px;margin:20px 0;}
+.highlight-box p{margin:0;color:var(--text);}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    Navolio App Studio
+  </a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<main>
+  <div class="app-header">
+    <div class="app-icon">💰</div>
+    <div class="app-info">
+      <h1>Gruzzolo — Privacy Policy</h1>
+      <p>Navolio App Studio · Michele Navolio</p>
+    </div>
+  </div>
+
+  <div class="meta">
+    <span class="meta-tag">Versione 1.0</span>
+    <span class="meta-tag">Ultimo aggiornamento: 30 marzo 2026</span>
+    <span class="meta-tag">iOS 17+</span>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>In sintesi:</strong> Gruzzolo non raccoglie dati finanziari reali. Tutti i dati rimangono sul tuo dispositivo. Nessun accesso ai tuoi conti bancari, nessun tracker, nessun server esterno.</p>
+  </div>
+
+  <p>Michele Navolio (di seguito "lo sviluppatore") ha sviluppato Gruzzolo come app gratuita con acquisto opzionale in-app. Questo documento illustra le pratiche riguardo alla raccolta, all'utilizzo e alla divulgazione dei dati personali degli utenti dell'app.</p>
+
+  <h2>1. Dati memorizzati localmente</h2>
+  <p>Gruzzolo salva i seguenti dati <strong>esclusivamente sul dispositivo</strong>:</p>
+  <table>
+    <tr><th>Tipo di dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Transazioni inserite manualmente (importo, categoria, data, nota)</td><td>File JSON locale / Core Data</td><td>Tracciamento spese</td></tr>
+    <tr><td>Budget mensili (50/30/20 personalizzati)</td><td>UserDefaults locale</td><td>Gestione budget</td></tr>
+    <tr><td>Obiettivi di risparmio</td><td>UserDefaults locale</td><td>Goal tracking</td></tr>
+    <tr><td>Preferenze valuta e lingua</td><td>UserDefaults locale</td><td>Personalizzazione</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <p><strong>Gruzzolo non accede a conti bancari, carte di credito o sistemi di pagamento reali.</strong> Tutte le transazioni sono inserite manualmente dall'utente.</p>
+
+  <h2>2. Dati finanziari</h2>
+  <p>Gruzzolo tratta <strong>solo dati finanziari inseriti manualmente</strong> dall'utente. Non vi è alcuna connessione a istituti bancari, API finanziarie o servizi di aggregazione conti. I dati finanziari non escono mai dal dispositivo.</p>
+
+  <h2>3. Sincronizzazione iCloud (CloudKit)</h2>
+  <p>Gruzzolo include infrastruttura per la sincronizzazione tramite Apple CloudKit. <strong>In versione 1.0 la sincronizzazione non è attiva.</strong> Quando disponibile, i dati verranno sincronizzati solo tramite l'account iCloud privato dell'utente.</p>
+
+  <h2>4. Acquisti in-app</h2>
+  <p>Gli acquisti in-app sono gestiti <strong>esclusivamente da Apple tramite StoreKit 2</strong>. Lo sviluppatore non raccoglie dati di pagamento.</p>
+
+  <h2>5. Analytics e tracking</h2>
+  <p>Gruzzolo <strong>non integra SDK di terze parti</strong> per analytics, advertising o crash reporting. Nessun tracciamento comportamentale.</p>
+
+  <h2>6. Conformità GDPR</h2>
+  <ul>
+    <li><strong>Diritto alla cancellazione:</strong> Elimina l'app o usa "Reimposta dati" nelle impostazioni dell'app</li>
+    <li><strong>Portabilità:</strong> Export CSV delle transazioni disponibile (funzione Premium)</li>
+    <li><strong>Minimizzazione:</strong> Solo i dati necessari al funzionamento dell'app vengono salvati</li>
+  </ul>
+
+  <h2>7. Dati dei minori</h2>
+  <p>Gruzzolo non è progettata per utenti sotto i 13 anni. Rating App Store: 4+.</p>
+
+  <h2>8. Contatti</h2>
+  <p><strong>Michele Navolio — Navolio App Studio</strong><br>
+  Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a><br>
+  Web: <a href="https://navolioappstudio.github.io">navolioappstudio.github.io</a></p>
+</main>
+
+<footer>© 2026 Navolio App Studio · Michele Navolio · <a href="/">navolioappstudio.github.io</a></footer>
+</body>
+</html>

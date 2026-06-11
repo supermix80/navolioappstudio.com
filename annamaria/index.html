@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#93000d",
+              "surface-tint": "#c00014",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#ffb4ab",
+              "secondary-fixed-dim": "#b4c5ff",
+              "secondary-container": "#6e94fe",
+              "tertiary": "#405890",
+              "surface-container": "#edeeef",
+              "surface-dim": "#d9dadb",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#191c1d",
+              "tertiary-fixed": "#d9e2ff",
+              "inverse-primary": "#ffb4ab",
+              "on-tertiary-fixed-variant": "#2c457c",
+              "secondary-fixed": "#dbe1ff",
+              "inverse-surface": "#2e3132",
+              "tertiary-fixed-dim": "#b0c6ff",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#5d3f3c",
+              "outline": "#926e6b",
+              "primary-fixed": "#ffdad6",
+              "surface-container-low": "#f3f4f5",
+              "on-tertiary-fixed": "#001945",
+              "on-secondary-container": "#002a78",
+              "on-background": "#191c1d",
+              "on-primary-container": "#fff7f6",
+              "surface": "#f8f9fa",
+              "on-secondary-fixed-variant": "#033ea6",
+              "on-tertiary-container": "#f9f8ff",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#00174b",
+              "on-primary": "#ffffff",
+              "surface-bright": "#f8f9fa",
+              "primary-container": "#e11b22",
+              "inverse-on-surface": "#f0f1f2",
+              "outline-variant": "#e7bdb8",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#5971ab",
+              "surface-variant": "#e1e3e4",
+              "secondary": "#2d58bf",
+              "surface-container-high": "#e7e8e9",
+              "background": "#f8f9fa",
+              "surface-container-highest": "#e1e3e4",
+              "error-container": "#ffdad6",
+              "primary": "#b70013",
+              "on-primary-fixed": "#410002",
+              "on-error": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(248,249,250,0.95) 0%, rgba(248,249,250,0.8) 100%);
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -20px rgba(25, 28, 29, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-xl shadow-slate-200/50 dark:shadow-none z-50 flex justify-between items-center px-8 py-3">
+<div class="text-xl font-bold tracking-tighter text-red-700 dark:text-red-500 font-headline">
+        Annamaria Cerbone RE/MAX Change
+    </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="#valuation-form">Valutazione</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="#contatti">Contatti</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="./chi-sono.html">Chi Sono</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="./chi-sono.html#testimonials">Recensioni</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="./faq.html">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-all active:scale-95" onclick="document.getElementById('valuation-form')?.scrollIntoView({ behavior: 'smooth' });">
+        Valuta Ora
+    </button>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Interno di un appartamento moderno di lusso a Milano con finestre a tutta altezza, calda luce mattutina e arredamento minimalista di alta gamma" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhtjmnZkzSp528b3ROX_wIXVtDz_dT0FrdTmPtWVdVjGc44KvKwwYZGkyvef7e3feIHhDmF4q6KguzrBfG3Ho5-TNXT5Rnz2XMEFB6HKfpT-HBXtGJDs2mUQ98lWZPY5Ue1UhyZMYnBlyAA_8knBtTiBw6z0vH_3wegynE3meIyuRDplk5TqwO9AdjymFkNw6mrL8644gSGTMSNSemtPLWTjx-kx01omTTqD9h1RcEueGIGXiLVGqis_AW1vZZvdNFeGtoCeRD96M"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"></div>
+</div>
+<div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+<div class="max-w-xl">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-6 leading-[1.1]">
+                Quanto vale la tua casa?
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10">
+                Ottieni una valutazione professionale gratuita da Annamaria Cerbone. La tua esperta RE/MAX Change per il mercato di Milano e Brugherio.
+            </p>
+<div class="flex flex-col gap-4 sm:flex-row items-center">
+<div class="flex -space-x-3">
+<img alt="Utente" class="w-12 h-12 rounded-full border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByyXIaB_mJ-1SfSJ3TmEjBcGe_4DeNpusBpdZ7jaBz2ieeX4N4cLbN6U96F2CVGaTtI8TCWLFQgLD6JumCraKvdMLby3XrZ1CSD7JsUsZ02IhwdwTWTIQWxvp-wk6QImOIpLujgf2IGq_NlMxI8znqSrEbnIjy5sIgENt6uOWkwZO6QVglX-HCLzCJ8vtHapSTe857jDVT9HXPHeJ2dZMKu2DYnadDg_9oGUmkHCpSNVlOe7Xk0ucu0tRCXRuw-nlJ1jSZnGhzUVc"/>
+<img alt="Utente" class="w-12 h-12 rounded-full border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgN4UEf8znqYhN6OqfAZL0Wikp5go43KjCkgUXE8sszKJt93tuG_2fheY47B2eM0ar8lEXqyefAjSdiExXHVTOPfhZFBY9a_V_Nw3-B2m03sRZgAGd3zRhK8HKeNOt2q2VTmP4hSvYnrr9zFbEhvHQeisIEkBXv9QF6l_RCp4FhsojlNz51jZsnY7ckB2BXbeoRj5QjDqqhgFEQQwlbQldov46DSrrEynxegZZtXgLnfKpPaAoi2AO8-Cb5t0P6Gcj0-LQghSZZvk"/>
+<img alt="Utente" class="w-12 h-12 rounded-full border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg294MWAWKEKeT0gzfH6jVtX-zUBPtPpyNZjm9KgroqeDLGnj3ezHqkJHKwq_sPeVw94WOlCoIOthypkbOjaZ41ATJ1h7BMYM_QYXhN_NVosF4_iRC936ajwxV18haYPLmb7PV8fPOQhHIHEx4bqGUeNrzdZ5_S89813ZQVrzvZ5TwB1gmi1VOaVWs18yCB3o_0uT8LGFYr4lUXJCIghCQPxme5h44C4zlqdRFkWPIMDJKu8F37l7PHhs-QD7GYcCyzKPYYTUX7Yc"/>
+</div>
+<p class="text-sm font-medium text-on-surface-variant">
+                    Oltre <span class="text-primary font-bold">500+ proprietari</span> hanno già richiesto una consulenza quest'anno.
+                </p>
+</div>
+</div>
+<!-- Valuation Form Card -->
+<div class="bg-surface-container-lowest p-8 md:p-10 rounded-xl shadow-2xl shadow-on-surface/5 editorial-shadow border border-outline-variant/15">
+<!-- Tab switcher: Voglio vendere / Cerco casa -->
+<div class="flex rounded-lg bg-surface-container-low p-1 mb-6" id="form-tabs">
+<button class="flex-1 py-2.5 rounded-md text-sm font-bold transition-all bg-primary text-white shadow-md" id="tab-sell" onclick="switchFormTab('sell')" type="button">
+    🏠 Voglio vendere
+</button>
+<button class="flex-1 py-2.5 rounded-md text-sm font-bold transition-all text-on-surface-variant hover:bg-surface-container" id="tab-buy" onclick="switchFormTab('buy')" type="button">
+    🔍 Cerco casa
+</button>
+</div>
+
+<!-- FORM VENDITA (valutazione) -->
+<form class="space-y-5" id="valuation-form">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Nome e cognome</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="lead-name" name="name" placeholder="Il tuo nome completo" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Telefono</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="lead-phone" name="phone" placeholder="+39" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Email</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="lead-email" name="email" placeholder="nome@esempio.it" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Indirizzo immobile</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="lead-address" name="address" placeholder="Via, Numero Civico, Città" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Mq</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="lead-mq" min="0" name="mq" placeholder="es. 85" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Prezzo stimato</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="lead-price" min="0" name="price" placeholder="€" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Tempistica vendita</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="lead-urgency" name="urgency">
+<option>Entro 30 giorni</option>
+<option>Entro 3 mesi</option>
+<option>Entro 6 mesi</option>
+<option>Solo informazione</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Note</label>
+<textarea class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="lead-notes" name="notes" placeholder="Dettagli aggiuntivi..." rows="2"></textarea>
+</div>
+<button class="w-full py-3.5 rounded-md bg-gradient-to-br from-primary to-primary-container text-white font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
+                        Invia Richiesta
+                    </button>
+<p class="hidden text-sm font-semibold" id="form-feedback"></p>
+<p class="text-[10px] text-center text-outline leading-tight mt-2">
+                        Inviando il modulo accetti la nostra Informativa sulla Privacy. I tuoi dati saranno trattati con la massima riservatezza.
+                    </p>
+</div>
+</form>
+
+<!-- FORM ACQUISTO (cerco casa) -->
+<form class="space-y-5 hidden" id="search-form">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Nome e cognome</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-name" name="name" placeholder="Il tuo nome completo" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Telefono</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-phone" name="phone" placeholder="+39" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Email</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-email" name="email" placeholder="nome@esempio.it" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Zona desiderata</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-address" name="address" placeholder="Quartiere, città o zona (es. Brera, Milano)" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Budget massimo</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-price" min="0" name="price" placeholder="€ (max)" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Tipologia</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-typology" name="typology">
+<option>Appartamento</option>
+<option>Villa</option>
+<option>Attico</option>
+<option>Loft</option>
+<option>Monolocale</option>
+<option>Altro</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Locali minimi</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-rooms" min="1" name="rooms" placeholder="es. 3" type="number"/>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Mq minimi</label>
+<input class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-mq" min="0" name="mq" placeholder="es. 70" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Tempistica</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-urgency" name="urgency">
+<option>Urgente — entro 1 mese</option>
+<option>Entro 3 mesi</option>
+<option>Entro 6 mesi</option>
+<option>Esplorativo — sto guardando</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1">Requisiti specifici</label>
+<textarea class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-notes" name="notes" placeholder="Terrazzo, box auto, piano alto, giardino, ascensore..." rows="2"></textarea>
+</div>
+<button class="w-full py-3.5 rounded-md bg-gradient-to-br from-secondary to-tertiary text-white font-bold text-lg shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
+                        Invia Richiesta
+                    </button>
+<p class="hidden text-sm font-semibold" id="search-form-feedback"></p>
+<p class="text-[10px] text-center text-outline leading-tight mt-2">
+                        Inviando il modulo accetti la nostra Informativa sulla Privacy. I tuoi dati saranno trattati con la massima riservatezza.
+                    </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover" data-alt="Ritratto professionale di Annamaria Cerbone, agente immobiliare con un'espressione sicura e amichevole, in abbigliamento professionale in un ufficio luminoso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjadDSdPqDWaKtyoebcyAHK5Q_2S--lj9NNuVFLpS4idyROxoYAG-YrHmXGorNsjFdFoaXVrLEfhQ5Q6lreh113ygETbZQmk0W4WwpPOIVE4ZbW2kByQj4j7OY1nuepcbuKQQT1bR5kGgYEqVac0QvvdQB8W3nP7tvuh1O4Mdyj7AFp2kH4zXc0cTDIt0PzXgH6TclDtA1I71umsg7wllyG0ucS97HPQrYPEL3et4jsEsmD5F3g21BdFz8xhMFMjNfqgtfMWiBcmA"/>
+</div>
+<div class="absolute -top-10 -left-10 w-full h-full bg-secondary-fixed rounded-2xl -z-10 opacity-50"></div>
+</div>
+<div class="lg:col-span-7">
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Personal Agent</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-8 leading-tight">
+                    Annamaria Cerbone: <br/><span class="text-secondary">Esperienza e Passione</span> nel cuore di Milano.
+                </h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+                    Con anni di esperienza nel settore immobiliare di alto livello, ho dedicato la mia carriera ad aiutare le persone a realizzare il loro sogno di casa. La mia missione non è solo vendere immobili, ma costruire relazioni di fiducia durature.
+                </p>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-10">
+                    Specializzata nelle zone di Milano e nell'hinterland, offro una consulenza personalizzata che unisce l'analisi meticolosa dei dati del mercato locale alla sensibilità umana necessaria per ogni transazione.
+                </p>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/30 pt-10">
+<div>
+<div class="text-3xl font-bold text-primary font-headline mb-1">2+</div>
+<div class="text-sm font-medium text-on-surface-variant">Anni di Esperienza</div>
+</div>
+<div>
+<div class="text-3xl font-bold text-primary font-headline mb-1">98%</div>
+<div class="text-sm font-medium text-on-surface-variant">Clienti Soddisfatti</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose RE/MAX Change Section -->
+<section class="py-32 bg-surface-container-low">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-20">
+<h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6">RE/MAX Change Brugherio</h2>
+<p class="text-lg text-on-surface-variant">Un team di professionisti al tuo fianco per garantire il massimo valore alla tua proprietà.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface-container-lowest p-10 rounded-xl editorial-shadow group overflow-hidden relative">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6" style='font-variation-settings: "FILL" 1;'>groups</span>
+<h3 class="text-2xl font-bold mb-4 text-on-surface">Potenza del Gruppo</h3>
+<p class="text-on-surface-variant leading-relaxed">Far parte di RE/MAX Change significa avere accesso a una rete globale di oltre 140.000 agenti. La tua casa non viene vista solo a Brugherio, ma in tutto il mondo.</p>
+</div>
+<div class="absolute bottom-0 right-0 w-1/2 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<img class="w-full" data-alt="Veduta aerea di un quartiere residenziale moderno a Brugherio con strade pulite e verde curato" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOsqAD6sPAaCW2LEM-ToS1TN3bu-BqvEFWPZMXiziq7Tc5IucQn2sWAJiYyWC77Jt1aDi6yo7f3DWHHaq0IqcjXhYPXWz3xH-YxBwuPnxbbmOM1mlB2eaV5XufRjUDd4CwWmoEffAcbzYBJyY-bXgpDG8XgrwVHixf94i25rUi_7BYmR4ahOD3Wn9Eb94bSFBYqOhG07pIFtIdVJ_MOTH9jFBrOQj9rMLvEuJeIF1Zcez4M0_QFAVqtNT7n972X0aMfnVOC4n0SN8"/>
+</div>
+</div>
+<div class="bg-secondary p-10 rounded-xl shadow-xl shadow-secondary/10 flex flex-col justify-center text-on-secondary">
+<span class="material-symbols-outlined text-4xl mb-6">verified</span>
+<h3 class="text-2xl font-bold mb-4">Certificazione Qualità</h3>
+<p class="opacity-90 leading-relaxed">Ogni fase della compravendita è monitorata dai nostri esperti legali e tecnici per assicurare una transazione sicura e senza sorprese.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl editorial-shadow">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">trending_up</span>
+<h3 class="text-2xl font-bold mb-4 text-on-surface">Marketing Strategico</h3>
+<p class="text-on-surface-variant leading-relaxed">Utilizziamo le ultime tecnologie di virtual tour, home staging e social advertising per mettere in risalto la tua proprietà.</p>
+</div>
+<div class="md:col-span-2 bg-white p-10 rounded-xl editorial-shadow flex flex-col md:flex-row gap-8 items-center border border-outline-variant/15">
+<div class="md:w-1/3">
+<img class="w-full aspect-square rounded-lg object-cover" data-alt="Design geometrico astratto con i colori del brand RE/MAX che simboleggia crescita strutturale e connessione" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR-80JMVeqmR4TOjU1HQXfqSGmQAqCLnlc1muMHIKLwZ8VYe1RclMLif2NTOoZWmXB16onaJSpRjMmk7BtctX0twOY28LvxqFGw8qBK8cDtdkymWCZ6f2xZK01YtdYa7dmecZLdhCaZqL5YMEZeVwEhAjJD_A3mED8W1Zio2ndWeM-gB3xyZxJXcKaIc2ocoAD3bauoj7ivy5z0-cwa4wAp__xZ0ysBbjcu7JIE0fiX90q73qUjPwBoN6JagExFfc6TDsoyXJ3Cf4"/>
+</div>
+<div class="md:w-2/3">
+<h3 class="text-2xl font-bold mb-4 text-on-surface">Innovazione a Brugherio</h3>
+<p class="text-on-surface-variant mb-6">La nostra sede di Brugherio è un centro di eccellenza dove la tradizione dell'intermediazione incontra l'innovazione digitale.</p>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="./chi-sono.html">
+                        Scopri il team <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 bg-surface">
+<div class="container mx-auto px-6">
+<h2 class="font-headline text-4xl font-bold text-center mb-20 text-on-surface">3 Passaggi verso il Valore Reale</h2>
+<div class="grid md:grid-cols-3 gap-12 relative">
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-px bg-outline-variant/30 -translate-y-1/2 -z-0"></div>
+<div class="relative bg-surface p-6 text-center">
+<div class="w-16 h-16 bg-primary-container text-white rounded-full flex items-center justify-center mx-auto mb-8 relative z-10 shadow-lg">
+<span class="material-symbols-outlined">edit_document</span>
+</div>
+<h4 class="text-xl font-bold mb-4 text-on-surface">1. Richiesta</h4>
+<p class="text-on-surface-variant">Compila il modulo online con i dettagli base della tua proprietà per iniziare il processo.</p>
+</div>
+<div class="relative bg-surface p-6 text-center">
+<div class="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-8 relative z-10 shadow-lg">
+<span class="material-symbols-outlined">home_work</span>
+</div>
+<h4 class="text-xl font-bold mb-4 text-on-surface">2. Sopralluogo</h4>
+<p class="text-on-surface-variant">Programmiamo un sopralluogo rapido per valutare finiture, stato e caratteristiche uniche.</p>
+</div>
+<div class="relative bg-surface p-6 text-center">
+<div class="w-16 h-16 bg-primary-container text-white rounded-full flex items-center justify-center mx-auto mb-8 relative z-10 shadow-lg">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h4 class="text-xl font-bold mb-4 text-on-surface">3. Report</h4>
+<p class="text-on-surface-variant">Ricevi un dossier dettagliato con il valore di mercato reale e la migliore strategia di vendita.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Final CTA -->
+<section class="py-24 bg-surface-container-highest" id="contatti">
+<div class="container mx-auto px-6">
+<div class="max-w-5xl mx-auto bg-surface-container-lowest rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+<div class="md:w-1/2 p-12 lg:p-16">
+<h2 class="font-headline text-3xl font-bold mb-8 text-on-surface">Parliamo del tuo futuro.</h2>
+<div class="space-y-6">
+<a class="flex items-center gap-4 group" href="tel:+390391234567">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary">call</span>
+</div>
+<span class="text-lg font-semibold text-on-surface">+39 039 123 4567</span>
+</a>
+<a class="flex items-center gap-4 group" href="mailto:acerbone@remax.it">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<span class="text-lg font-semibold text-on-surface">acerbone@remax.it</span>
+</a>
+<a class="flex items-center gap-4 group" href="https://www.remax.it/trova-agenzia/change" rel="noopener" target="_blank">
+<div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-slate-700">person_search</span>
+</div>
+<span class="text-lg font-semibold text-on-surface underline">Profilo Ufficiale RE/MAX</span>
+</a>
+</div>
+</div>
+<div class="md:w-1/2 bg-primary p-12 lg:p-16 text-on-primary flex flex-col justify-center items-center text-center">
+<h3 class="text-3xl font-headline font-bold mb-6 italic">"Vendere casa è un viaggio, lascia che ti guidi verso la meta migliore."</h3>
+<p class="mb-10 opacity-80">- Annamaria Cerbone</p>
+<button class="bg-white text-primary px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-all" onclick="document.getElementById('valuation-form')?.scrollIntoView({ behavior: 'smooth' });">
+                    Inizia Ora
+                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 full-width pt-20 pb-10">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1">
+<div class="text-lg font-bold text-slate-900 dark:text-white mb-6">Annamaria Cerbone</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                Professionista certificata RE/MAX specializzata nel mercato residenziale e commerciale di Milano e provincia.
+            </p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Menu</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="#valuation-form">Valutazione</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="#contatti">Contatti</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="./chi-sono.html">Chi Sono</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Legali</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="./privacy.html">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="./faq.html">FAQ</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="mailto:acerbone@remax.it">Contatti</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6">Social</h4>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 cursor-pointer hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">share</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-slate-200 dark:border-slate-800">
+<p class="text-xs text-slate-500 dark:text-slate-400 text-center">
+            © 2024 Annamaria Cerbone. Ogni agenzia RE/MAX® è autonoma e indipendente.
+        </p>
+</div>
+</footer>
+<script>
+// === Configurazione API ===
+const explicitApiBaseUrl = window.AGENTE_API_BASE_URL;
+const isGithubPages = window.location.hostname.includes("github.io");
+const apiBaseUrl = explicitApiBaseUrl || (isGithubPages ? "https://agente-immobiliare-api.vercel.app" : "http://localhost:3000");
+
+// === Tab Switch: Vendita / Acquisto ===
+function switchFormTab(tab) {
+  const sellForm = document.getElementById("valuation-form");
+  const buyForm = document.getElementById("search-form");
+  const tabSell = document.getElementById("tab-sell");
+  const tabBuy = document.getElementById("tab-buy");
+
+  if (tab === "sell") {
+    sellForm.classList.remove("hidden");
+    buyForm.classList.add("hidden");
+    tabSell.classList.add("bg-primary", "text-white", "shadow-md");
+    tabSell.classList.remove("text-on-surface-variant");
+    tabBuy.classList.remove("bg-secondary", "text-white", "shadow-md");
+    tabBuy.classList.add("text-on-surface-variant");
+  } else {
+    sellForm.classList.add("hidden");
+    buyForm.classList.remove("hidden");
+    tabBuy.classList.add("bg-secondary", "text-white", "shadow-md");
+    tabBuy.classList.remove("text-on-surface-variant");
+    tabSell.classList.remove("bg-primary", "text-white", "shadow-md");
+    tabSell.classList.add("text-on-surface-variant");
+  }
+}
+
+// === Helper feedback ===
+function setFormFeedback(feedbackEl, message, isError) {
+  feedbackEl.textContent = message;
+  feedbackEl.classList.remove("hidden", "text-primary", "text-error");
+  feedbackEl.classList.add(isError ? "text-error" : "text-primary");
+}
+
+// === Invio generico al backend ===
+async function submitLead(payload, feedbackEl, formEl) {
+  try {
+    if (!apiBaseUrl) {
+      throw new Error("Landing pubblicata. Backend lead ancora da collegare.");
+    }
+    setFormFeedback(feedbackEl, "Invio in corso...", false);
+
+    const response = await fetch(`${apiBaseUrl}/api/leads`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+    if (!response.ok || !result.success) {
+      throw new Error(result.error || "Invio lead non riuscito.");
+    }
+
+    formEl.reset();
+    setFormFeedback(feedbackEl, "Richiesta inviata. Il lead è stato creato nel CRM.", false);
+  } catch (error) {
+    setFormFeedback(feedbackEl, error instanceof Error ? error.message : "Errore durante l'invio.", true);
+  }
+}
+
+// === Form VENDITA (valutazione) ===
+const sellForm = document.getElementById("valuation-form");
+const sellFeedback = document.getElementById("form-feedback");
+
+sellForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const payload = {
+    name: document.getElementById("lead-name")?.value?.trim(),
+    phone: document.getElementById("lead-phone")?.value?.trim(),
+    email: document.getElementById("lead-email")?.value?.trim(),
+    address: document.getElementById("lead-address")?.value?.trim(),
+    mq: Number(document.getElementById("lead-mq")?.value || 0) || null,
+    price: Number(document.getElementById("lead-price")?.value || 0) || null,
+    urgency: document.getElementById("lead-urgency")?.value,
+    notes: document.getElementById("lead-notes")?.value?.trim(),
+    source: "landing_public_valuation",
+    channel: "website",
+    agent: "Annamaria Cerbone",
+    agency: "RE/MAX Change",
+    date: new Date().toISOString()
+  };
+  await submitLead(payload, sellFeedback, sellForm);
+});
+
+// === Form ACQUISTO (cerco casa) ===
+const buyForm = document.getElementById("search-form");
+const buyFeedback = document.getElementById("search-form-feedback");
+
+buyForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const typology = document.getElementById("buy-typology")?.value || "";
+  const rooms = document.getElementById("buy-rooms")?.value || "";
+  const mqMin = document.getElementById("buy-mq")?.value || "";
+  const notes = document.getElementById("buy-notes")?.value?.trim() || "";
+
+  // Compone le note con i requisiti specifici dell'acquirente
+  const fullNotes = [
+    typology ? `Tipologia: ${typology}` : "",
+    rooms ? `Locali min: ${rooms}` : "",
+    mqMin ? `Mq min: ${mqMin}` : "",
+    notes
+  ].filter(Boolean).join(" · ");
+
+  const payload = {
+    name: document.getElementById("buy-name")?.value?.trim(),
+    phone: document.getElementById("buy-phone")?.value?.trim(),
+    email: document.getElementById("buy-email")?.value?.trim(),
+    address: document.getElementById("buy-address")?.value?.trim(),
+    mq: Number(mqMin || 0) || null,
+    price: Number(document.getElementById("buy-price")?.value || 0) || null,
+    urgency: document.getElementById("buy-urgency")?.value,
+    notes: fullNotes,
+    source: "landing_public_search",
+    channel: "website",
+    agent: "Annamaria Cerbone",
+    agency: "RE/MAX Change",
+    date: new Date().toISOString()
+  };
+  await submitLead(payload, buyFeedback, buyForm);
+});
+</script>
+</body></html>

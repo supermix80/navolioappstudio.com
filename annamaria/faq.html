@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="it"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#d9e2ff",
+              "background": "#f8f9fa",
+              "on-primary-fixed": "#410002",
+              "secondary-fixed": "#dbe1ff",
+              "secondary": "#2d58bf",
+              "on-surface-variant": "#5d3f3c",
+              "tertiary-container": "#5971ab",
+              "surface-tint": "#c00014",
+              "inverse-primary": "#ffb4ab",
+              "surface-container-highest": "#e1e3e4",
+              "on-secondary-container": "#002a78",
+              "surface-container-low": "#f3f4f5",
+              "on-primary-fixed-variant": "#93000d",
+              "outline": "#926e6b",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "tertiary": "#405890",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#f9f8ff",
+              "tertiary-fixed-dim": "#b0c6ff",
+              "on-primary": "#ffffff",
+              "surface": "#f8f9fa",
+              "surface-bright": "#f8f9fa",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#ffdad6",
+              "secondary-fixed-dim": "#b4c5ff",
+              "outline-variant": "#e7bdb8",
+              "surface-variant": "#e1e3e4",
+              "error": "#ba1a1a",
+              "surface-container": "#edeeef",
+              "primary-container": "#e11b22",
+              "on-tertiary-fixed-variant": "#2c457c",
+              "surface-dim": "#d9dadb",
+              "primary-fixed-dim": "#ffb4ab",
+              "on-background": "#191c1d",
+              "inverse-on-surface": "#f0f1f2",
+              "on-surface": "#191c1d",
+              "on-secondary-fixed": "#00174b",
+              "on-error-container": "#93000a",
+              "inverse-surface": "#2e3132",
+              "surface-container-high": "#e7e8e9",
+              "secondary-container": "#6e94fe",
+              "primary": "#b70013",
+              "on-secondary-fixed-variant": "#033ea6",
+              "on-primary-container": "#fff7f6",
+              "on-tertiary-fixed": "#001945"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 10px 40px -10px rgba(25, 28, 29, 0.04);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-full mt-4 mx-auto max-w-5xl shadow-lg shadow-slate-900/5 tonal-layering">
+<div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-headline">
+            Annamaria Cerbone RE/MAX Change
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 transition-colors" href="./index.html#valuation-form">Valutazione</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 transition-colors" href="./index.html#contatti">Contatti</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 transition-colors" href="./chi-sono.html">Chi Sono</a>
+<a class="text-red-700 dark:text-red-500 font-bold border-b-2 border-red-700 transition-colors" href="./faq.html">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 duration-200 transition-all text-sm uppercase tracking-wider" onclick="window.location.href='./index.html#valuation-form'">
+            Richiedi Valutazione
+        </button>
+</nav>
+<main class="pt-32 pb-20 px-6">
+<!-- Hero Section & Search -->
+<section class="max-w-4xl mx-auto text-center mb-16">
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-on-surface">
+                Come posso <span class="text-primary">aiutarti?</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+                Tutte le risposte alle tue domande sul mercato immobiliare, la valutazione del tuo immobile e i segreti per una compravendita di successo.
+            </p>
+<div class="relative max-w-xl mx-auto">
+<div class="absolute inset-y-0 left-5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full pl-14 pr-6 py-5 bg-surface-container-lowest border-none rounded-xl editorial-shadow focus:ring-2 focus:ring-secondary transition-all placeholder:text-on-surface-variant/50 text-lg" placeholder="Cerca una domanda (es. commissioni, tempi...)" type="text"/>
+</div>
+</section>
+<!-- Category Bento Layout -->
+<section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+<!-- Category: Vendita -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 border border-outline-variant/10 hover:bg-white transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sell</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Vendita</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Scopri come massimizzare il valore del tuo immobile e ridurre i tempi di giacenza sul mercato.</p>
+<div class="mt-auto pt-4 flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                    Sfoglia FAQ <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Category: Acquisto -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 border border-outline-variant/10 hover:bg-white transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Acquisto</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Dalla ricerca alla proposta d'acquisto: tutto ciò che devi sapere per trovare la casa dei tuoi sogni.</p>
+<div class="mt-auto pt-4 flex items-center text-secondary font-semibold text-sm group-hover:gap-2 transition-all">
+                    Sfoglia FAQ <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Category: Valutazione -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4 border border-outline-variant/10 hover:bg-white transition-colors cursor-pointer group">
+<div class="w-12 h-12 bg-tertiary/10 rounded-lg flex items-center justify-center text-tertiary mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Valutazione</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Comprendere il valore reale del mercato. Come funziona il metodo RE/MAX Change.</p>
+<div class="mt-auto pt-4 flex items-center text-tertiary font-semibold text-sm group-hover:gap-2 transition-all">
+                    Sfoglia FAQ <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Accordion Section -->
+<section class="max-w-4xl mx-auto space-y-4">
+<div class="mb-8 border-b border-outline-variant/20 pb-4">
+<h2 class="font-headline text-3xl font-bold">Domande Comuni</h2>
+</div>
+<!-- Accordion Item 1 -->
+<details class="group bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden" open="">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-lg text-on-surface hover:bg-surface-container-low transition-colors">
+<span>Quanto tempo occorre per vendere un immobile con RE/MAX Change?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed border-t border-outline-variant/5">
+                    Grazie al nostro sistema di Open House e alla collaborazione tra consulenti, la media di vendita di RE/MAX Change è sensibilmente inferiore a quella nazionale. In genere, un immobile correttamente posizionato sul mercato trova un acquirente entro i primi 60-90 giorni.
+                </div>
+</details>
+<!-- Accordion Item 2 -->
+<details class="group bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-lg text-on-surface hover:bg-surface-container-low transition-colors">
+<span>La valutazione del mio immobile è gratuita?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed border-t border-outline-variant/5">
+                    Sì, offro una consulenza iniziale gratuita che include un'Analisi Comparativa di Mercato (CMA) dettagliata per aiutarti a capire il valore reale del tuo immobile nel contesto attuale di zona.
+                </div>
+</details>
+<!-- Accordion Item 3 -->
+<details class="group bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-lg text-on-surface hover:bg-surface-container-low transition-colors">
+<span>Quali documenti sono necessari per mettere in vendita la casa?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed border-t border-outline-variant/5">
+                    Per iniziare, avremo bisogno dell'atto di provenienza, della planimetria catastale, dell'attestato di prestazione energetica (APE) e della documentazione condominiale se presente. Mi occuperò io di verificare la completezza di tutto il fascicolo documentale.
+                </div>
+</details>
+<!-- Accordion Item 4 -->
+<details class="group bg-surface-container-lowest rounded-xl editorial-shadow overflow-hidden">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-lg text-on-surface hover:bg-surface-container-low transition-colors">
+<span>Cos'è il metodo Open House?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 text-on-surface-variant leading-relaxed border-t border-outline-variant/5">
+                    L'Open House è un evento di marketing concentrato che permette a più potenziali acquirenti di visitare l'immobile nello stesso giorno. Questo genera un senso di urgenza e competizione che spesso porta a offerte multiple e al prezzo di mercato più alto possibile.
+                </div>
+</details>
+</section>
+<!-- CTA Section -->
+<section class="max-w-5xl mx-auto mt-24">
+<div class="relative rounded-3xl overflow-hidden bg-secondary py-16 px-8 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12">
+<!-- Image Background or Element -->
+<div class="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
+<div class="w-full h-full bg-gradient-to-br from-white to-transparent" data-alt="linee architettoniche astratte e curve minimaliste in uno sfondo sfumato bianco e grigio morbido"></div>
+</div>
+<div class="relative z-10 text-center md:text-left max-w-lg">
+<h2 class="font-headline text-4xl font-extrabold text-white mb-4">Ancora domande?</h2>
+<p class="text-secondary-fixed/80 text-lg leading-relaxed mb-8">
+                        Ogni casa è unica, come ogni esigenza. Parliamo del tuo progetto immobiliare senza impegno.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a class="bg-primary-container text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-105 transition-all shadow-xl shadow-black/10" href="mailto:acerbone@remax.it">
+                            Contattami Ora <span class="material-symbols-outlined">call</span>
+</a>
+<a class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/20 transition-all" href="./index.html#valuation-form">
+                            Valuta il tuo immobile <span class="material-symbols-outlined">trending_up</span>
+</a>
+</div>
+</div>
+<div class="relative z-10 w-full max-w-xs aspect-square rounded-2xl overflow-hidden editorial-shadow transform rotate-3">
+<img alt="Ritratto di Annamaria Cerbone" class="w-full h-full object-cover" data-alt="ritratto di un'agente immobiliare donna professionale in un ufficio moderno e luminoso che sorride con fiducia alla telecamera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLhWpL7WDWzYDynlCAVfrRncZ6mZGP4IDPMCTE9__2aUvFOKn9VRKhK1uxiv0uP58iJvmJTUrD3rr5tAM0wEfaIhcwjKrl36Piy6NxsApY576Pxk4J_h5Kf7raOOckJE5DL6nORhjnixjGpws6sUm7BGmsjzkjuYJxo84JQ02Txgxx1mq7dtEUERxLzi0Xg_T0vghrLJho1RACS2nuaC2JmsWOH9cIA5GFu7V7ZL0AhUmld_uh3psrrqUlkeKiu6zPdt6Py3jnCPE"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent text-white">
+<p class="font-bold text-lg">Annamaria Cerbone</p>
+<p class="text-xs opacity-80 uppercase tracking-widest">Specialista RE/MAX Change</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-6 md:px-20 grid grid-cols-1 md:grid-cols-3 gap-8 bg-slate-50 dark:bg-slate-950 border-t-0 tonal-shift">
+<div class="flex flex-col gap-4">
+<div class="text-lg font-bold text-slate-900 dark:text-white font-headline">
+                Annamaria Cerbone RE/MAX Change
+            </div>
+<p class="text-slate-500 dark:text-slate-500 text-sm leading-relaxed max-w-xs">
+                Consulenza immobiliare di alto livello basata su dati, trasparenza e risultati concreti.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface uppercase text-xs tracking-widest">Link Rapidi</h4>
+<div class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-500 hover:underline hover:text-red-700 transition-opacity opacity-80 hover:opacity-100" href="./privacy.html">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-500 hover:underline hover:text-red-700 transition-opacity opacity-80 hover:opacity-100" href="./chi-sono.html">Chi Sono</a>
+<a class="text-slate-500 dark:text-slate-500 hover:underline hover:text-red-700 transition-opacity opacity-80 hover:opacity-100" href="mailto:acerbone@remax.it">Contatti</a>
+<a class="text-slate-500 dark:text-slate-500 hover:underline hover:text-red-700 transition-opacity opacity-80 hover:opacity-100" href="https://www.remax.it/" rel="noopener" target="_blank">RE/MAX</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-on-surface uppercase text-xs tracking-widest">Contatti</h4>
+<div class="flex flex-col gap-2 text-slate-500 dark:text-slate-500 text-sm">
+<p>Via Roma 123, Napoli</p>
+<p>+39 081 234 5678</p>
+<p>acerbone@remax.it</p>
+</div>
+<div class="text-slate-500 dark:text-slate-500 text-xs mt-4">
+                © 2024 Annamaria Cerbone RE/MAX Change. Tutti i diritti riservati.
+            </div>
+</div>
+</footer>
+</body></html>

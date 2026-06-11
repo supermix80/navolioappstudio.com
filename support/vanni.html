@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporto — Vanni · Navolio App Studio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0c10;--bg2:#111318;--border:#1e2530;--text:#edf2f7;--muted:#7a8694;--gold:#fbbf24;--radius:14px;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{background:rgba(10,12,16,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(20px,5vw,80px);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#fbbf24,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-back{font-size:14px;color:var(--muted);text-decoration:none;}
+.nav-back:hover{color:var(--text);}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,8vw,80px) clamp(20px,5vw,40px);}
+.app-header{display:flex;align-items:center;gap:18px;margin-bottom:40px;padding:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.app-icon{width:56px;height:56px;border-radius:14px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.app-info h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+.app-info p{font-size:14px;color:var(--muted);}
+h2{font-size:20px;font-weight:800;margin:36px 0 14px;}
+p,li{font-size:16px;color:var(--muted);margin-bottom:12px;}
+ul{padding-left:24px;margin-bottom:16px;}
+li{margin-bottom:8px;}
+strong{color:var(--text);font-weight:600;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:12px;}
+.faq-q{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.faq-a{font-size:15px;color:var(--muted);margin:0;}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;margin-top:40px;}
+.contact-card h3{font-size:20px;font-weight:800;margin-bottom:10px;}
+.contact-card p{color:var(--muted);margin-bottom:20px;}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fbbf24,#e67e22);color:#0a0c10;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;transition:opacity .2s;}
+.contact-btn:hover{opacity:.9;}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    Navolio App Studio
+  </a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<main>
+  <div class="app-header">
+    <div class="app-icon">🚐</div>
+    <div class="app-info">
+      <h1>Vanni — Supporto</h1>
+      <p>Navolio App Studio · Versione 1.0 · iOS 17+</p>
+    </div>
+  </div>
+
+  <h2>Domande frequenti</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Come registro un nuovo viaggio?</div>
+    <div class="faq-a">Dal tab Viaggi, tocca il pulsante "+" in alto a destra. Inserisci destinazione, date di partenza e arrivo, km percorsi e note. Salva con il pulsante Conferma.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come aggiungo una manutenzione?</div>
+    <div class="faq-a">Dal tab Manutenzioni, tocca "+". Seleziona il tipo di manutenzione (tagliando, pneumatici, revisione, ecc.), inserisci data, km attuali e costo. Puoi aggiungere note e foto della ricevuta.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come traccio le spese del camper?</div>
+    <div class="faq-a">Dal tab Spese, tocca "+". Seleziona la categoria (carburante, campeggio, pedaggi, cibo, ecc.), inserisci importo, data e note opzionali. Le statistiche si aggiornano automaticamente nella Dashboard.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come archivio i documenti del camper?</div>
+    <div class="faq-a">Dal tab Documenti, tocca "+" per aggiungere un documento. Puoi fotografarlo con la fotocamera o importarlo dalla libreria foto. Disponibili categorie: Assicurazione, Bollo, Revisione, Libretto, Patente.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come uso la checklist pre-partenza?</div>
+    <div class="faq-a">Dal tab Viaggi → seleziona un viaggio in programmazione → tocca "Checklist". Spunta gli elementi completati. Puoi aggiungere voci personalizzate con "+" in basso. La checklist si resetta per ogni nuovo viaggio.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come aggiorno i km del veicolo?</div>
+    <div class="faq-a">Dalla Dashboard, tocca il box "Km attuali" oppure vai su Profilo → Veicolo → Modifica. I km si aggiornano anche automaticamente quando registri una manutenzione con km.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come esporto i dati dei miei viaggi?</div>
+    <div class="faq-a">Dal tab Viaggi, tocca l'icona Export in alto a destra (funzione Premium). Viene generato un file CSV con tutti i viaggi e le spese, condivisibile via AirDrop, email o Files.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come ricevo avvisi per le manutenzioni in scadenza?</div>
+    <div class="faq-a">Quando aggiungi una manutenzione, puoi impostare una data di prossima scadenza. Vanni ti invierà una notifica locale 30 giorni prima. Assicurati che le notifiche siano attive da Impostazioni iOS → Notifiche → Vanni.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come ripristino il mio acquisto Premium su un altro dispositivo?</div>
+    <div class="faq-a">Vai su Impostazioni → Ripristina Acquisti. Assicurati di essere connesso con lo stesso Apple ID usato per l'acquisto originale.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come elimino tutti i miei dati?</div>
+    <div class="faq-a">Elimina l'app da Impostazioni iOS → Generale → Spazio iPhone → Vanni → Elimina App. Tutti i dati, inclusi documenti e foto, verranno rimossi definitivamente dal dispositivo.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">L'app funziona offline?</div>
+    <div class="faq-a">Sì, completamente. Vanni funziona al 100% offline. Non è richiesta connessione internet per nessuna funzionalità (eccetto l'acquisto Premium che richiede connessione per la validazione StoreKit).</div>
+  </div>
+
+  <div class="contact-card">
+    <h3>Hai ancora bisogno di aiuto?</h3>
+    <p>Scrivici direttamente. Rispondo di persona entro 24-48 ore.</p>
+    <a href="mailto:michele.navolio@gmail.com?subject=Vanni%20Support" class="contact-btn">✉️ Contatta il supporto</a>
+  </div>
+
+</main>
+
+<footer>© 2026 Navolio App Studio · Michele Navolio · <a href="/privacy/vanni.html">Privacy Policy</a></footer>
+</body>
+</html>

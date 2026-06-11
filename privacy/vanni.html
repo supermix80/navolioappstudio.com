@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Privacy Policy — Vanni · Navolio App Studio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0c10;--bg2:#111318;--border:#1e2530;--text:#edf2f7;--muted:#7a8694;--gold:#fbbf24;--radius:14px;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{background:rgba(10,12,16,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(20px,5vw,80px);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#fbbf24,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-back{font-size:14px;color:var(--muted);text-decoration:none;}
+.nav-back:hover{color:var(--text);}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,8vw,80px) clamp(20px,5vw,40px);}
+.app-header{display:flex;align-items:center;gap:18px;margin-bottom:40px;padding:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.app-icon{width:56px;height:56px;border-radius:14px;background:rgba(59,130,246,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.app-info h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+.app-info p{font-size:14px;color:var(--muted);}
+.meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.meta-tag{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.2);color:var(--gold);}
+h2{font-size:20px;font-weight:800;margin:36px 0 12px;color:var(--text);}
+h2:first-of-type{margin-top:0;}
+p,li{font-size:16px;color:var(--muted);margin-bottom:12px;}
+ul{padding-left:24px;margin-bottom:16px;}
+li{margin-bottom:6px;}
+strong{color:var(--text);font-weight:600;}
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px;}
+th{background:var(--bg2);color:var(--muted);font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:10px 14px;text-align:left;border:1px solid var(--border);}
+td{padding:10px 14px;border:1px solid var(--border);color:var(--muted);vertical-align:top;}
+td:first-child{color:var(--text);font-weight:500;}
+.highlight-box{background:var(--bg2);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:var(--radius);padding:18px 20px;margin:20px 0;}
+.highlight-box p{margin:0;color:var(--text);}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    Navolio App Studio
+  </a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<main>
+  <div class="app-header">
+    <div class="app-icon">🚐</div>
+    <div class="app-info">
+      <h1>Vanni — Privacy Policy</h1>
+      <p>Navolio App Studio · Michele Navolio</p>
+    </div>
+  </div>
+
+  <div class="meta">
+    <span class="meta-tag">Versione 1.0</span>
+    <span class="meta-tag">Ultimo aggiornamento: 31 marzo 2026</span>
+    <span class="meta-tag">iOS 17+</span>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>In sintesi:</strong> Vanni non raccoglie dati personali. Tutti i dati rimangono sul tuo dispositivo. Nessun tracker, nessun analytics, nessun server esterno.</p>
+  </div>
+
+  <p>Michele Navolio (di seguito "lo sviluppatore") ha sviluppato Vanni come app gratuita con acquisto opzionale in-app. Questo documento illustra le pratiche riguardo alla raccolta, all'utilizzo e alla divulgazione dei dati personali degli utenti dell'app.</p>
+
+  <h2>1. Raccolta dei dati</h2>
+  <p><strong>Vanni non raccoglie dati personali degli utenti.</strong></p>
+  <p>L'app funziona completamente offline. Non vi è alcuna raccolta, trasmissione o condivisione di informazioni personali con server esterni o terze parti.</p>
+
+  <h2>2. Dati memorizzati localmente sul dispositivo</h2>
+  <p>Vanni salva i seguenti dati <strong>esclusivamente sul dispositivo dell'utente</strong> tramite SwiftData e il file system locale:</p>
+  <table>
+    <tr><th>Tipo di dato</th><th>Dove</th><th>Scopo</th></tr>
+    <tr><td>Viaggi (destinazione, date, km, note)</td><td>SwiftData locale</td><td>Diario viaggi</td></tr>
+    <tr><td>Manutenzioni (tipo, data, km, costo)</td><td>SwiftData locale</td><td>Storico manutenzioni</td></tr>
+    <tr><td>Spese (categoria, importo, data, note)</td><td>SwiftData locale</td><td>Gestione budget</td></tr>
+    <tr><td>Documenti (foto, PDF assicurazioni, bollo, revisione)</td><td>File system locale</td><td>Archivio documenti</td></tr>
+    <tr><td>Profilo veicolo (modello, targa, anno, km attuali)</td><td>SwiftData locale</td><td>Dashboard</td></tr>
+    <tr><td>Checklist pre-partenza (elementi personalizzati)</td><td>SwiftData locale</td><td>Preparazione viaggio</td></tr>
+    <tr><td>Stato premium</td><td>UserDefaults locale</td><td>Feature gating</td></tr>
+  </table>
+  <p><strong>Questi dati non vengono mai trasmessi a server esterni.</strong> Non sono accessibili allo sviluppatore né a terze parti.</p>
+
+  <h2>3. Fotocamera e Libreria Foto</h2>
+  <p>Vanni può richiedere accesso alla fotocamera per fotografare il camper, i documenti e le destinazioni. Le foto vengono salvate <strong>esclusivamente sul dispositivo</strong> e non sono trasmesse a server esterni.</p>
+
+  <h2>4. Localizzazione (GPS)</h2>
+  <p>Vanni può richiedere l'accesso alla posizione per registrare la location di un viaggio. I dati di posizione vengono salvati <strong>esclusivamente sul dispositivo</strong>. L'app non trasmette coordinate GPS a server esterni e non traccia continuamente la posizione dell'utente.</p>
+
+  <h2>5. Acquisti in-app (In-App Purchase)</h2>
+  <p>Vanni offre un acquisto in-app opzionale per funzionalità Premium. Le transazioni sono gestite <strong>esclusivamente da Apple tramite StoreKit 2</strong>. Lo sviluppatore non raccoglie né elabora dati di pagamento. Per la gestione dei dati di pagamento da parte di Apple: <a href="https://www.apple.com/legal/privacy/it/" target="_blank" rel="noopener">Privacy Policy Apple</a>.</p>
+
+  <h2>6. Sincronizzazione iCloud (CloudKit)</h2>
+  <p>L'infrastruttura CloudKit è predisposta per versioni future di Vanni. <strong>Nella versione 1.0 la sincronizzazione iCloud non è attiva.</strong> Quando attivata, i dati verranno sincronizzati esclusivamente tramite l'account iCloud privato dell'utente, non accessibili allo sviluppatore.</p>
+
+  <h2>7. Analytics e tracking di terze parti</h2>
+  <p>Vanni <strong>non integra SDK di terze parti</strong> per analytics, advertising, crash reporting o social network. Nessun tracciamento comportamentale degli utenti.</p>
+
+  <h2>8. Conformità GDPR</h2>
+  <ul>
+    <li><strong>Base giuridica:</strong> Il trattamento dei dati locali avviene sulla base del consenso implicito all'uso dell'app, strettamente necessario per il funzionamento del servizio</li>
+    <li><strong>Minimizzazione dei dati:</strong> Vengono salvati solo i dati strettamente necessari alle funzionalità richieste</li>
+    <li><strong>Diritto alla cancellazione:</strong> Elimina l'app da Impostazioni iOS → Generale → Spazio iPhone → Vanni → Elimina App</li>
+    <li><strong>Portabilità:</strong> La funzione Export CSV (Premium) permette di esportare tutti i dati dei viaggi e delle spese</li>
+  </ul>
+
+  <h2>9. Dati dei minori</h2>
+  <p>Vanni non è progettata per utenti sotto i 13 anni. Non raccogliamo dati personali da minori. Rating App Store: 4+.</p>
+
+  <h2>10. Modifiche a questa Privacy Policy</h2>
+  <p>Eventuali modifiche significative verranno notificate tramite aggiornamento dell'app sull'App Store. La data "Ultimo aggiornamento" in cima verrà modificata.</p>
+
+  <h2>11. Contatti</h2>
+  <p><strong>Michele Navolio — Navolio App Studio</strong><br>
+  Email: <a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a><br>
+  Web: <a href="https://navolioappstudio.github.io">navolioappstudio.github.io</a></p>
+</main>
+
+<footer>© 2026 Navolio App Studio · Michele Navolio · <a href="/">navolioappstudio.github.io</a></footer>
+</body>
+</html>

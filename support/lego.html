@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporto — Lego Collezione · Navolio App Studio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0c10;--bg2:#111318;--border:#1e2530;--text:#edf2f7;--muted:#7a8694;--gold:#fbbf24;--radius:14px;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{background:rgba(10,12,16,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(20px,5vw,80px);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#fbbf24,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-back{font-size:14px;color:var(--muted);text-decoration:none;}
+.nav-back:hover{color:var(--text);}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,8vw,80px) clamp(20px,5vw,40px);}
+.app-header{display:flex;align-items:center;gap:18px;margin-bottom:40px;padding:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.app-icon{width:56px;height:56px;border-radius:14px;background:rgba(200,16,46,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.app-info h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+.app-info p{font-size:14px;color:var(--muted);}
+h2{font-size:20px;font-weight:800;margin:36px 0 14px;}
+p,li{font-size:16px;color:var(--muted);margin-bottom:12px;}
+ul{padding-left:24px;margin-bottom:16px;}
+li{margin-bottom:8px;}
+strong{color:var(--text);font-weight:600;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:12px;}
+.faq-q{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.faq-a{font-size:15px;color:var(--muted);margin:0;}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;margin-top:40px;}
+.contact-card h3{font-size:20px;font-weight:800;margin-bottom:10px;}
+.contact-card p{color:var(--muted);margin-bottom:20px;}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fbbf24,#e67e22);color:#0a0c10;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;transition:opacity .2s;}
+.contact-btn:hover{opacity:.9;}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    Navolio App Studio
+  </a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<main>
+  <div class="app-header">
+    <div class="app-icon">🧱</div>
+    <div class="app-info">
+      <h1>Lego Collezione — Supporto</h1>
+      <p>Navolio App Studio · Versione 1.0 · iOS 17+</p>
+    </div>
+  </div>
+
+  <h2>Domande frequenti</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Come aggiungo un set alla collezione?</div>
+    <div class="faq-a">Tocca il pulsante rosso "+" in basso a destra nella schermata Collezione. Puoi aggiungere il set manualmente inserendo nome, numero, tema e stato, oppure usare lo scanner barcode per identificare il set dal codice sulla confezione.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come funziona lo scanner barcode?</div>
+    <div class="faq-a">Tocca "+" → "Scanner". Punta la fotocamera verso il codice a barre sulla scatola del set. L'app legge il codice e pre-compila automaticamente il form. Completa i dettagli mancanti e salva.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come cambio lo stato di un set (Montato, Smontato, Sigillato)?</div>
+    <div class="faq-a">Apri il dettaglio del set toccandoci sopra, poi tocca il badge "Stato" nella scheda. Si aprirà un picker per selezionare il nuovo stato. Salva con il pulsante in alto a destra.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come aggiungo un set alla wishlist?</div>
+    <div class="faq-a">Apri il dettaglio di un set e tocca l'icona cuore in alto a destra. Il set viene spostato nella tab Wishlist. Per rimuoverlo dalla wishlist, tocca di nuovo l'icona cuore.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come filtro i set per tema o stato?</div>
+    <div class="faq-a">Nella schermata Collezione, usa le chip filtro sotto la barra di ricerca per filtrare per stato (Montato, Smontato, Sigillato). Usa la barra di ricerca per cercare per nome, numero set o tema.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come passo dalla visualizzazione a griglia a quella a lista?</div>
+    <div class="faq-a">Tocca l'icona in alto a destra nella barra di navigazione: l'icona con le righe passa alla lista, quella con i quadratini torna alla griglia.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come elimino un set dalla collezione?</div>
+    <div class="faq-a">In modalità lista, scorri verso sinistra sulla riga del set per vedere il pulsante "Elimina". In alternativa, apri il dettaglio del set e usa l'opzione Elimina dal menu.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come aggiungo foto al mio set?</div>
+    <div class="faq-a">Nel dettaglio del set, tocca l'area immagine in alto. Puoi scattare una foto con la fotocamera o scegliere un'immagine dalla libreria foto.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Il widget non si aggiorna, come faccio?</div>
+    <div class="faq-a">Il widget si aggiorna automaticamente ogni ora e ogni volta che apri l'app. Se continua a non aggiornarsi, tieni premuto sul widget → Modifica widget → conferma le impostazioni. Assicurati di avere iOS 17 o versione successiva.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come ripristino il mio acquisto Premium su un altro dispositivo?</div>
+    <div class="faq-a">Vai su Impostazioni → Ripristina Acquisti. Assicurati di essere connesso con lo stesso Apple ID usato per l'acquisto originale.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come elimino tutti i miei dati?</div>
+    <div class="faq-a">Elimina l'app da Impostazioni iOS → Generale → Spazio iPhone → Lego Collezione → Elimina App. Tutti i dati verranno rimossi definitivamente dal dispositivo.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">L'app funziona offline?</div>
+    <div class="faq-a">Sì, completamente. Lego Collezione funziona al 100% offline. Non è richiesta connessione internet per nessuna funzionalità (eccetto l'acquisto Premium che richiede connessione per la validazione StoreKit).</div>
+  </div>
+
+  <div class="contact-card">
+    <h3>Hai ancora bisogno di aiuto?</h3>
+    <p>Scrivici direttamente. Rispondo di persona entro 24-48 ore.</p>
+    <a href="mailto:michele.navolio@gmail.com?subject=Lego%20Collezione%20Support" class="contact-btn">✉️ Contatta il supporto</a>
+  </div>
+
+</main>
+
+<footer>© 2026 Navolio App Studio · Michele Navolio · <a href="/privacy/lego.html">Privacy Policy</a></footer>
+</body>
+</html>

@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Navolio App Studio — App iOS nate dalla vita vera. KarateTracker, Fridgo, Gruzzolo, Vanni e altro ancora.">
+<meta name="author" content="Michele Navolio">
+<meta property="og:title" content="Navolio App Studio">
+<meta property="og:description" content="App iOS nate dalla vita vera. Vita vissuta → prodotto.">
+<meta property="og:type" content="website">
+<title>Navolio App Studio</title>
+<style>
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+/* ── Tokens ── */
+:root {
+  --bg:        #0a0c10;
+  --bg2:       #111318;
+  --bg3:       #161b22;
+  --border:    #1e2530;
+  --text:      #edf2f7;
+  --muted:     #7a8694;
+  --gold:      #fbbf24;
+  --gold2:     #f59e0b;
+  --amber:     #e67e22;
+  --green:     #34d399;
+  --blue:      #60a5fa;
+  --purple:    #a78bfa;
+  --red:       #f87171;
+  --teal:      #2dd4bf;
+  --grad:      linear-gradient(135deg, #fbbf24, #e67e22);
+  --grad2:     linear-gradient(135deg, #a78bfa, #60a5fa);
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 20px 60px rgba(0,0,0,0.4);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,12,16,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 clamp(20px, 5vw, 80px);
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 36px; height: 36px;
+  background: var(--grad);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.nav-logo-text {
+  font-size: 17px; font-weight: 700; color: var(--text);
+  letter-spacing: -0.3px;
+}
+.nav-links {
+  display: flex; gap: 28px; list-style: none;
+}
+.nav-links a {
+  font-size: 15px; color: var(--muted); text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ── Hero ── */
+.hero {
+  min-height: 88vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: clamp(60px, 12vw, 140px) clamp(20px, 5vw, 80px);
+  position: relative; overflow: hidden;
+}
+.hero-glow {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 50% at 50% 30%,
+    rgba(251,191,36,0.12) 0%, transparent 70%);
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(251,191,36,0.1);
+  border: 1px solid rgba(251,191,36,0.25);
+  color: var(--gold);
+  font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 7px 18px;
+  border-radius: 999px; margin-bottom: 32px;
+}
+.hero-title {
+  font-size: clamp(44px, 7vw, 88px);
+  font-weight: 800; letter-spacing: -2px;
+  line-height: 1.05;
+  background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.6));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text; margin-bottom: 24px;
+}
+.hero-title span {
+  background: var(--grad);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(17px, 2.5vw, 22px);
+  color: var(--muted); max-width: 580px;
+  margin: 0 auto 44px;
+}
+.hero-cta {
+  display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--grad); color: #0a0c10;
+  font-size: 16px; font-weight: 700;
+  padding: 14px 30px; border-radius: 12px;
+  text-decoration: none; transition: opacity .2s, transform .15s;
+}
+.btn-primary:hover { opacity: .9; transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid var(--border); color: var(--muted);
+  font-size: 16px; font-weight: 600;
+  padding: 14px 30px; border-radius: 12px;
+  text-decoration: none; transition: border-color .2s, color .2s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── Section ── */
+section { padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 80px); }
+.section-label {
+  font-size: 13px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800; letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 18px; color: var(--muted); max-width: 560px;
+  margin-bottom: 56px;
+}
+
+/* ── App Grid ── */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.app-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: border-color .2s, transform .2s;
+  position: relative; overflow: hidden;
+}
+.app-card:hover { border-color: rgba(251,191,36,0.3); transform: translateY(-3px); }
+.app-card-accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.app-icon {
+  width: 60px; height: 60px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin-bottom: 18px;
+  flex-shrink: 0;
+}
+.app-name { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+.app-tagline { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+.app-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.badge {
+  font-size: 12px; font-weight: 600; padding: 4px 10px;
+  border-radius: 999px; letter-spacing: 0.3px;
+}
+.badge-live { background: rgba(52,211,153,0.12); color: var(--green); border: 1px solid rgba(52,211,153,0.25); }
+.badge-tf   { background: rgba(96,165,250,0.12); color: var(--blue);  border: 1px solid rgba(96,165,250,0.25); }
+.badge-wip  { background: rgba(167,139,250,0.12); color: var(--purple); border: 1px solid rgba(167,139,250,0.25); }
+.badge-ios  { background: rgba(122,134,148,0.12); color: var(--muted);  border: 1px solid var(--border); }
+.app-link {
+  font-size: 14px; font-weight: 600; color: var(--gold);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+  transition: gap .2s;
+}
+.app-link:hover { gap: 10px; }
+.apps-sublabel {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 20px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.app-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-top: 4px; }
+.btn-store {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--text); color: var(--bg);
+  font-size: 13px; font-weight: 700; padding: 9px 16px;
+  border-radius: 9px; text-decoration: none; transition: opacity .2s;
+}
+.btn-store:hover { opacity: .85; }
+.btn-store-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: transparent; color: var(--muted);
+  font-size: 13px; font-weight: 600; padding: 9px 16px;
+  border-radius: 9px; border: 1px solid var(--border);
+  text-decoration: none;
+}
+
+/* ── Services ── */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.service-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px; position: relative; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.service-card:hover { border-color: rgba(251,191,36,0.35); transform: translateY(-3px); }
+.service-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.service-icon { font-size: 40px; margin-bottom: 20px; }
+.service-name { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+.service-desc { font-size: 15px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+.service-list { list-style: none; padding: 0; margin-bottom: 28px; }
+.service-list li { font-size: 14px; color: var(--muted); padding: 6px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+.service-list li:last-child { border-bottom: none; }
+.service-list li::before { content: "→"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+/* ── About ── */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: center;
+}
+@media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+.about-avatar {
+  width: 90px; height: 90px; border-radius: 22px;
+  background: var(--grad);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 42px; margin-bottom: 28px;
+}
+.about-name { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+.about-role { font-size: 16px; color: var(--gold); font-weight: 600; margin-bottom: 20px; }
+.about-bio { font-size: 17px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; }
+.about-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.about-link {
+  font-size: 14px; font-weight: 600; color: var(--muted);
+  text-decoration: none; padding: 8px 16px;
+  border: 1px solid var(--border); border-radius: 8px;
+  transition: color .2s, border-color .2s;
+}
+.about-link:hover { color: var(--gold); border-color: var(--gold); }
+
+.philosophy-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px;
+}
+.phil-item { margin-bottom: 28px; }
+.phil-item:last-child { margin-bottom: 0; }
+.phil-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.phil-text { font-size: 16px; color: var(--muted); line-height: 1.65; }
+
+/* ── Contact ── */
+.contact-section {
+  background: var(--bg2); border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+.contact-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px; max-width: 900px; margin: 0 auto;
+}
+.contact-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px 20px; text-align: center;
+}
+.contact-icon { font-size: 28px; margin-bottom: 12px; }
+.contact-label { font-size: 13px; color: var(--muted); margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.contact-val { font-size: 15px; font-weight: 600; color: var(--text); }
+.contact-val a { color: var(--gold); text-decoration: none; }
+.contact-val a:hover { text-decoration: underline; }
+
+/* ── Footer ── */
+footer {
+  padding: 32px clamp(20px, 5vw, 80px);
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-left { font-size: 14px; color: var(--muted); }
+.footer-links { display: flex; gap: 24px; list-style: none; }
+.footer-links a { font-size: 13px; color: var(--muted); text-decoration: none; }
+.footer-links a:hover { color: var(--text); }
+
+/* ── Divider ── */
+.divider { height: 1px; background: var(--border); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    <span class="nav-logo-text">Navolio App Studio</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#app">App</a></li>
+    <li><a href="#services">Servizi</a></li>
+    <li><a href="#about">Studio</a></li>
+    <li><a href="#contact">Contatti</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-tag">🇮🇹 Indie iOS Studio — Milano</div>
+  <h1 class="hero-title">Vita vissuta<br><span>→ prodotto.</span></h1>
+  <p class="hero-sub">App iOS nate da esperienze reali. Ogni app è un capitolo — karate, cucina, finanza, camper, libertà.</p>
+  <div class="hero-cta">
+    <a href="#app" class="btn-primary">Scopri le app →</a>
+    <a href="#about" class="btn-ghost">Chi siamo</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- APP -->
+<section id="app">
+  <div class="section-label">Prodotti</div>
+  <h2 class="section-title">Le nostre app</h2>
+  <p class="section-sub">16 prodotti in sviluppo. Ogni app nasce da un'esigenza vissuta in prima persona.</p>
+
+  <!-- In submission / TestFlight -->
+  <div class="apps-sublabel">In submission · TestFlight</div>
+  <div class="apps-grid" style="margin-bottom:48px;">
+
+    <!-- KarateTracker -->
+    <div class="app-card">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#C8102E,#8B0000)"></div>
+      <div class="app-icon" style="background:rgba(200,16,46,0.12);">🥋</div>
+      <div class="app-name">KarateTracker</div>
+      <div class="app-tagline">Il tuo dojo tascabile Shotokan. Diario allenamento, kata, statistiche e progressione cintura.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge" style="background:rgba(200,16,46,0.12);color:#f87171;border:1px solid rgba(200,16,46,0.25);">In Submission</span>
+      </div>
+      <div class="app-actions">
+        <span class="btn-store-ghost">🍎 In arrivo</span>
+        <a href="support/karate.html" class="app-link">Supporto →</a>
+      </div>
+    </div>
+
+    <!-- Lego Collezione -->
+    <div class="app-card">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#C8102E,#FFD700)"></div>
+      <div class="app-icon" style="background:rgba(200,16,46,0.12);">🧱</div>
+      <div class="app-name">Lego Collezione</div>
+      <div class="app-tagline">Gestisci la tua collezione LEGO. Scanner barcode, wishlist, minifigure, statistiche e widget.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-live">TestFlight Live</span>
+      </div>
+      <div class="app-actions">
+        <span class="btn-store-ghost">🍎 In arrivo</span>
+        <a href="support/lego.html" class="app-link">Supporto →</a>
+      </div>
+    </div>
+
+    <!-- Fridgo -->
+    <div class="app-card">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#FF6B2B,#FF9500)"></div>
+      <div class="app-icon" style="background:rgba(255,107,43,0.12);">🍳</div>
+      <div class="app-name">Fridgo</div>
+      <div class="app-tagline">Apri il frigo, scopri cosa cucinare. AI che trasforma gli ingredienti disponibili in ricette.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-live">TestFlight Live</span>
+      </div>
+      <div class="app-actions">
+        <span class="btn-store-ghost">🧪 TestFlight presto</span>
+        <a href="support/fridgo.html" class="app-link">Supporto →</a>
+      </div>
+    </div>
+
+    <!-- Vanni -->
+    <div class="app-card">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#4A90E2,#2DD4BF)"></div>
+      <div class="app-icon" style="background:rgba(74,144,226,0.12);">🚐</div>
+      <div class="app-name">Vanni</div>
+      <div class="app-tagline">Compagno di viaggio digitale per camperisti. Mappa, POI, diario, meteo e CarPlay.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-live">TestFlight Live</span>
+      </div>
+      <div class="app-actions">
+        <a href="https://vanniapp.com" class="btn-store" target="_blank" rel="noopener">🚐 vanniapp.com →</a>
+        <a href="support/vanni.html" class="app-link">Supporto →</a>
+      </div>
+    </div>
+
+    <!-- Gruzzolo -->
+    <div class="app-card">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#00C896,#007AFF)"></div>
+      <div class="app-icon" style="background:rgba(0,200,150,0.12);">💰</div>
+      <div class="app-name">Gruzzolo</div>
+      <div class="app-tagline">Finanza personale con la regola 50/30/20. Capisci dove sono andati i soldi, davvero.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-tf">TestFlight</span>
+      </div>
+      <div class="app-actions">
+        <span class="btn-store-ghost">🧪 TestFlight presto</span>
+        <a href="privacy/index.html#gruzzolo" class="app-link">Privacy →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- In sviluppo -->
+  <div class="apps-sublabel">In sviluppo</div>
+  <div class="apps-grid" style="margin-bottom:48px;">
+
+    <!-- Sub -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#0EA5E9,#0284C7)"></div>
+      <div class="app-icon" style="background:rgba(14,165,233,0.12);">🤿</div>
+      <div class="app-name">Sub</div>
+      <div class="app-tagline">Dive log per subacquei. Registra immersioni, profili, specie marine e brevetti PADI.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- Piove -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#60A5FA,#818CF8)"></div>
+      <div class="app-icon" style="background:rgba(96,165,250,0.12);">☔</div>
+      <div class="app-name">Piove!</div>
+      <div class="app-tagline">50 attività indoor per bambini. Piove fuori? Perfetto. Adesso si gioca davvero.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- DizionarioAnimali -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#34D399,#10B981)"></div>
+      <div class="app-icon" style="background:rgba(52,211,153,0.12);">🦁</div>
+      <div class="app-name">DizionarioAnimali</div>
+      <div class="app-tagline">Scopri il mondo degli animali. App educativa per bambini 3–8 anni con audio e illustrazioni.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- Salute -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#F43F5E,#E11D48)"></div>
+      <div class="app-icon" style="background:rgba(244,63,94,0.12);">❤️‍🔥</div>
+      <div class="app-name">Salute</div>
+      <div class="app-tagline">Tracker benessere personale. Sonno, attività, idratazione e abitudini in un'unica dashboard.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- Casa -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#F59E0B,#D97706)"></div>
+      <div class="app-icon" style="background:rgba(245,158,11,0.12);">🏠</div>
+      <div class="app-name">Casa</div>
+      <div class="app-tagline">Gestione casa intelligente. Manutenzioni, garanzie, spese condominiali e scadenze.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- MioGarage -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#6B7280,#374151)"></div>
+      <div class="app-icon" style="background:rgba(107,114,128,0.12);">🚗</div>
+      <div class="app-name">MioGarage</div>
+      <div class="app-tagline">Il libretto digitale del tuo veicolo. Tagliandi, spese, scadenze e documenti sempre con te.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- Ballo -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#EC4899,#A855F7)"></div>
+      <div class="app-icon" style="background:rgba(236,72,153,0.12);">💃</div>
+      <div class="app-name">Ballo</div>
+      <div class="app-tagline">Impara bachata e salsa davvero. Step, progressione livelli, pratica guidata e playlist.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <div class="app-actions">
+        <a href="privacy/ballo.html" class="app-link">Privacy →</a>
+        <a href="support/ballo.html" class="app-link">Supporto →</a>
+      </div>
+    </div>
+
+    <!-- PapaAttende -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#2DD4BF,#0D9488)"></div>
+      <div class="app-icon" style="background:rgba(45,212,191,0.12);">👨‍👧</div>
+      <div class="app-name">PapaAttende</div>
+      <div class="app-tagline">Per i papà in sala d'attesa. Attività, storie e giochi per i momenti di pausa con i bambini.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- Hub -->
+    <div class="app-card" style="opacity:0.85;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#A78BFA,#60A5FA)"></div>
+      <div class="app-icon" style="background:rgba(167,139,250,0.12);">🧠</div>
+      <div class="app-name">Hub</div>
+      <div class="app-tagline">Life Engine — gestisci famiglia, finanza, salute e crescita personale in un unico posto.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In sviluppo</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+  </div>
+
+  <!-- Pipeline -->
+  <div class="apps-sublabel">Pipeline · In arrivo</div>
+  <div class="apps-grid">
+
+    <!-- FIRE Anno Zero -->
+    <div class="app-card" style="opacity:0.7;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#D4AF37,#E67E22)"></div>
+      <div class="app-icon" style="background:rgba(212,175,55,0.12);">🔥</div>
+      <div class="app-name">FIRE Anno Zero</div>
+      <div class="app-tagline">Una trilogia per chi ha deciso di ricominciare. Narrativa + strategia finanziaria. Vol.1 in stesura.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">Kindle + KDP</span>
+        <span class="badge badge-wip">In stesura</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- Arco -->
+    <div class="app-card" style="opacity:0.7;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#8B5CF6,#6D28D9)"></div>
+      <div class="app-icon" style="background:rgba(139,92,246,0.12);">✍️</div>
+      <div class="app-name">Arco</div>
+      <div class="app-tagline">La mappa della tua storia. Toolkit narrativo per scrittori italiani — memoir, romanzi, sceneggiature.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iOS 17+</span>
+        <span class="badge badge-wip">In pipeline</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+    <!-- SummerVibes -->
+    <div class="app-card" style="opacity:0.7;">
+      <div class="app-card-accent" style="background:linear-gradient(90deg,#F97316,#EAB308)"></div>
+      <div class="app-icon" style="background:rgba(249,115,22,0.12);">🌅</div>
+      <div class="app-name">SummerVibes</div>
+      <div class="app-tagline">Sticker pack estate. Per le chat che profumano di mare, sole e vacanza.</div>
+      <div class="app-badges">
+        <span class="badge badge-ios">iMessage</span>
+        <span class="badge badge-wip">In pipeline</span>
+      </div>
+      <a href="privacy/index.html" class="app-link">Privacy →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">Servizi</div>
+  <h2 class="section-title">Costruiamo anche per te</h2>
+  <p class="section-sub">App proprietarie in licenza o sviluppo custom su misura. Stessa qualità, stesso stack.</p>
+
+  <div class="services-grid">
+
+    <!-- Licensing -->
+    <div class="service-card">
+      <div class="service-card-accent" style="background:linear-gradient(90deg,#fbbf24,#e67e22)"></div>
+      <div class="service-icon">📦</div>
+      <div class="service-name">App in licenza</div>
+      <div class="service-desc">Acquista una delle nostre app con il tuo branding. Ideale per associazioni sportive, scuole, aziende che vogliono un prodotto iOS già testato e pronto.</div>
+      <ul class="service-list">
+        <li>White-label di KarateTracker per dojo e federazioni</li>
+        <li>Gruzzolo per welfare aziendale e HR</li>
+        <li>Fridgo per brand food e editorial</li>
+        <li>Branding personalizzato (icona, colori, nome)</li>
+        <li>Distribuzione tramite il tuo account App Store</li>
+      </ul>
+      <a href="mailto:michele.navolio@gmail.com?subject=Licensing%20App" class="btn-store">✉️ Parliamone →</a>
+    </div>
+
+    <!-- Custom dev -->
+    <div class="service-card">
+      <div class="service-card-accent" style="background:linear-gradient(90deg,#a78bfa,#60a5fa)"></div>
+      <div class="service-icon">⚙️</div>
+      <div class="service-name">Sviluppo custom</div>
+      <div class="service-desc">Hai un'idea, un problema reale, un progetto da costruire. Sviluppiamo la tua app iOS da zero: dalla strategia al deploy in App Store.</div>
+      <ul class="service-list">
+        <li>SwiftUI nativo iOS/iPadOS/macOS</li>
+        <li>Privacy by design — no tracking, dati locali o CloudKit</li>
+        <li>StoreKit 2 per monetizzazione in-app</li>
+        <li>CBL process: idea → validazione → MVP → store</li>
+        <li>Supporto post-lancio incluso</li>
+      </ul>
+      <a href="mailto:michele.navolio@gmail.com?subject=Sviluppo%20App%20Custom" class="btn-store" style="background:linear-gradient(135deg,#a78bfa,#60a5fa);color:#0a0c10;">✉️ Richiedi preventivo →</a>
+    </div>
+
+    <!-- Consulenza -->
+    <div class="service-card">
+      <div class="service-card-accent" style="background:linear-gradient(90deg,#34d399,#0ea5e9)"></div>
+      <div class="service-icon">🧭</div>
+      <div class="service-name">Consulenza iOS</div>
+      <div class="service-desc">Hai già un team ma ti servono competenze specifiche su SwiftUI, StoreKit, CloudKit o App Store submission. Sessioni di consulenza o advisory continuativo.</div>
+      <ul class="service-list">
+        <li>Code review e architettura SwiftUI</li>
+        <li>Setup StoreKit 2 e monetizzazione</li>
+        <li>App Store Connect, submission, review response</li>
+        <li>Privacy policy e compliance GDPR App Store</li>
+        <li>Sessioni da 1h o pacchetti mensili</li>
+      </ul>
+      <a href="mailto:michele.navolio@gmail.com?subject=Consulenza%20iOS" class="btn-store" style="background:linear-gradient(135deg,#34d399,#0ea5e9);color:#0a0c10;">✉️ Prenota sessione →</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">Studio</div>
+  <div class="about-grid">
+    <div>
+      <div class="about-avatar">👨‍💻</div>
+      <div class="about-name">Michele Navolio</div>
+      <div class="about-role">Founder & CEO · Navolio App Studio</div>
+      <p class="about-bio">
+        Padre, atleta, nomade digitale, sviluppatore indie. Costruisco app che mi servivano e non trovavo.
+        Ogni idea nasce da un'esigenza vissuta in prima persona — poi viene validata con analisi di mercato, ricerche sugli utenti e confronto con i competitor.
+      </p>
+      <div class="about-links">
+        <a href="https://michelenavolio.com" class="about-link" target="_blank" rel="noopener">🌐 michelenavolio.com</a>
+        <a href="https://www.instagram.com/michele_navolio/" class="about-link" target="_blank" rel="noopener">📸 Instagram</a>
+        <a href="https://x.com/michele_navolio" class="about-link" target="_blank" rel="noopener">𝕏 Twitter/X</a>
+        <a href="https://www.linkedin.com/in/michelenavolio/" class="about-link" target="_blank" rel="noopener">💼 LinkedIn</a>
+        <a href="https://github.com/michelenavolio" class="about-link" target="_blank" rel="noopener">⌨️ GitHub</a>
+        <a href="mailto:michele.navolio@gmail.com" class="about-link">✉️ Email</a>
+      </div>
+    </div>
+    <div class="philosophy-card">
+      <div class="phil-item">
+        <div class="phil-label">Filosofia</div>
+        <div class="phil-text">Vita vissuta → ricerca → prodotto. Ogni idea nasce da un'esigenza reale, poi validata con analisi di mercato e ricerche utenti.</div>
+      </div>
+      <div class="phil-item">
+        <div class="phil-label">Stack</div>
+        <div class="phil-text">SwiftUI · Swift 6 · StoreKit 2 · CloudKit · iOS 17+ · macOS 14+</div>
+      </div>
+      <div class="phil-item">
+        <div class="phil-label">Valori</div>
+        <div class="phil-text">Privacy by design · No tracking · No subscription (quando possibile) · Open TestFlight</div>
+      </div>
+      <div class="phil-item">
+        <div class="phil-label">Anno Zero</div>
+        <div class="phil-text">2026 è l'anno zero. Tutto quello che costruiamo ora diventa la base per i prossimi 10 anni.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="section-label" style="text-align:center;">Contatti</div>
+  <h2 class="section-title" style="text-align:center;margin-bottom:12px;">Scrivici</h2>
+  <p style="text-align:center;color:var(--muted);margin-bottom:44px;">Per supporto, privacy o press.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">🛟</div>
+      <div class="contact-label">Supporto</div>
+      <div class="contact-val"><a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">🔒</div>
+      <div class="contact-label">Privacy & GDPR</div>
+      <div class="contact-val"><a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📰</div>
+      <div class="contact-label">Press</div>
+      <div class="contact-val"><a href="mailto:michele.navolio@gmail.com">michele.navolio@gmail.com</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">📸</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-val"><a href="https://www.instagram.com/michele_navolio/" target="_blank" rel="noopener">@michele_navolio</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">𝕏</div>
+      <div class="contact-label">Twitter / X</div>
+      <div class="contact-val"><a href="https://x.com/michele_navolio" target="_blank" rel="noopener">@michele_navolio</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">💼</div>
+      <div class="contact-label">LinkedIn</div>
+      <div class="contact-val"><a href="https://www.linkedin.com/in/michelenavolio/" target="_blank" rel="noopener">Michele Navolio</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-icon">⌨️</div>
+      <div class="contact-label">GitHub</div>
+      <div class="contact-val"><a href="https://github.com/michelenavolio" target="_blank" rel="noopener">michelenavolio</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">© 2026 Navolio App Studio · Michele Navolio · P.IVA in fase di apertura</div>
+  <ul class="footer-links">
+    <li><a href="privacy/index.html">Privacy Policy</a></li>
+    <li><a href="mailto:michele.navolio@gmail.com">Supporto</a></li>
+    <li><a href="https://www.instagram.com/michele_navolio/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://x.com/michele_navolio" target="_blank" rel="noopener">Twitter/X</a></li>
+    <li><a href="https://www.linkedin.com/in/michelenavolio/" target="_blank" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://github.com/michelenavolio" target="_blank" rel="noopener">GitHub</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
