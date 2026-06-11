@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="dark light">
 
 <title>Navolio App Studio — App iOS Indie · Milano</title>
 <meta name="description" content="Navolio App Studio: indie iOS studio italiano. App nate da esperienze reali — KarateTracker, Fridgo, Gruzzolo, Vanni. Sviluppo custom e licensing." />
@@ -372,6 +372,47 @@ footer {
 /* ── Divider ── */
 .divider { height: 1px; background: var(--border); }
 
+/* ── Light mode ── */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:     #f8fafc;
+    --bg2:    #ffffff;
+    --bg3:    #f1f5f9;
+    --border: #e2e8f0;
+    --text:   #0f172a;
+    --muted:  #475569;
+    --shadow: 0 20px 60px rgba(0,0,0,0.08);
+  }
+  nav { background: rgba(248,250,252,0.92); }
+  .hero-title { background: linear-gradient(180deg,#0f172a 30%,rgba(15,23,42,0.65)); -webkit-background-clip:text; background-clip:text; }
+  .btn-primary { color: #fff; }
+}
+[data-theme="light"] {
+  --bg:     #f8fafc;
+  --bg2:    #ffffff;
+  --bg3:    #f1f5f9;
+  --border: #e2e8f0;
+  --text:   #0f172a;
+  --muted:  #475569;
+  --shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+[data-theme="light"] nav { background: rgba(248,250,252,0.92); }
+[data-theme="light"] .hero-title { background: linear-gradient(180deg,#0f172a 30%,rgba(15,23,42,0.65)); -webkit-background-clip:text; background-clip:text; }
+[data-theme="light"] .btn-primary { color: #fff; }
+[data-theme="dark"] nav { background: rgba(10,12,16,0.85); }
+
+/* ── Nav controls ── */
+.nav-controls { display: flex; align-items: center; gap: 8px; }
+.nav-icon-btn {
+  background: none; border: 1px solid var(--border);
+  border-radius: 999px; cursor: pointer;
+  font-size: 0.78rem; font-family: inherit;
+  color: var(--muted); padding: 5px 12px; line-height: 1.4;
+  transition: border-color .2s, color .2s;
+}
+.nav-icon-btn:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 600px) { .nav-controls { display: none; } }
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .nav-links { display: none; }
@@ -390,22 +431,26 @@ footer {
     <span class="nav-logo-text">Navolio App Studio</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#app">App</a></li>
-    <li><a href="#services">Servizi</a></li>
-    <li><a href="#about">Studio</a></li>
-    <li><a href="#contact">Contatti</a></li>
+    <li><a href="#app" data-i18n="nav.app">App</a></li>
+    <li><a href="#services" data-i18n="nav.services">Servizi</a></li>
+    <li><a href="#about" data-i18n="nav.about">Studio</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contatti</a></li>
   </ul>
+  <div class="nav-controls">
+    <button id="langToggle" class="nav-icon-btn" aria-label="Switch language">EN</button>
+    <button id="themeToggle" class="nav-icon-btn" aria-label="Toggle theme">☀️</button>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <div class="hero-tag">🇮🇹 Indie iOS Studio — Milano</div>
-  <h1 class="hero-title">Vita vissuta<br><span>→ prodotto.</span></h1>
-  <p class="hero-sub">App iOS nate da esperienze reali. Ogni app è un capitolo — karate, cucina, finanza, camper, libertà.</p>
+  <div class="hero-tag" data-i18n="hero.tag">🇮🇹 Indie iOS Studio — Milano</div>
+  <h1 class="hero-title" data-i18n-html="hero.title">Vita vissuta<br><span>→ prodotto.</span></h1>
+  <p class="hero-sub" data-i18n="hero.sub">App iOS nate da esperienze reali. Ogni app è un capitolo — karate, cucina, finanza, camper, libertà.</p>
   <div class="hero-cta">
-    <a href="#app" class="btn-primary">Scopri le app →</a>
-    <a href="#about" class="btn-ghost">Chi siamo</a>
+    <a href="#app" class="btn-primary" data-i18n="hero.cta1">Scopri le app →</a>
+    <a href="#about" class="btn-ghost" data-i18n="hero.cta2">Chi siamo</a>
   </div>
 </section>
 
@@ -413,12 +458,12 @@ footer {
 
 <!-- APP -->
 <section id="app">
-  <div class="section-label">Prodotti</div>
-  <h2 class="section-title">Le nostre app</h2>
-  <p class="section-sub">18 prodotti in sviluppo. Ogni app nasce da un'esigenza vissuta in prima persona.</p>
+  <div class="section-label" data-i18n="apps.label">Prodotti</div>
+  <h2 class="section-title" data-i18n="apps.title">Le nostre app</h2>
+  <p class="section-sub" data-i18n="apps.sub">18 prodotti in sviluppo. Ogni app nasce da un'esigenza vissuta in prima persona.</p>
 
   <!-- In submission / TestFlight -->
-  <div class="apps-sublabel">In submission · TestFlight</div>
+  <div class="apps-sublabel" data-i18n="apps.sub1">In submission · TestFlight</div>
   <div class="apps-grid" style="margin-bottom:48px;">
 
     <!-- KarateTracker -->
@@ -520,7 +565,7 @@ footer {
   </div>
 
   <!-- In sviluppo -->
-  <div class="apps-sublabel">In sviluppo</div>
+  <div class="apps-sublabel" data-i18n="apps.sub2">In sviluppo</div>
   <div class="apps-grid" style="margin-bottom:48px;">
 
     <!-- Sub -->
@@ -646,7 +691,7 @@ footer {
   </div>
 
   <!-- Pipeline -->
-  <div class="apps-sublabel">Pipeline · In arrivo</div>
+  <div class="apps-sublabel" data-i18n="apps.sub3">Pipeline · In arrivo</div>
   <div class="apps-grid">
 
     <!-- FIRE Anno Zero -->
@@ -695,9 +740,9 @@ footer {
 
 <!-- SERVICES -->
 <section id="services">
-  <div class="section-label">Servizi</div>
-  <h2 class="section-title">Costruiamo anche per te</h2>
-  <p class="section-sub">App proprietarie in licenza o sviluppo custom su misura. Stessa qualità, stesso stack.</p>
+  <div class="section-label" data-i18n="svc.label">Servizi</div>
+  <h2 class="section-title" data-i18n="svc.title">Costruiamo anche per te</h2>
+  <p class="section-sub" data-i18n="svc.sub">App proprietarie in licenza o sviluppo custom su misura. Stessa qualità, stesso stack.</p>
 
   <div class="services-grid">
 
@@ -705,48 +750,48 @@ footer {
     <div class="service-card">
       <div class="service-card-accent" style="background:linear-gradient(90deg,#fbbf24,#e67e22)"></div>
       <div class="service-icon">📦</div>
-      <div class="service-name">App in licenza</div>
-      <div class="service-desc">Acquista una delle nostre app con il tuo branding. Ideale per associazioni sportive, scuole, aziende che vogliono un prodotto iOS già testato e pronto.</div>
+      <div class="service-name" data-i18n="svc1.name">App in licenza</div>
+      <div class="service-desc" data-i18n="svc1.desc">Acquista una delle nostre app con il tuo branding. Ideale per associazioni sportive, scuole, aziende che vogliono un prodotto iOS già testato e pronto.</div>
       <ul class="service-list">
-        <li>White-label di KarateTracker per dojo e federazioni</li>
-        <li>Gruzzolo per welfare aziendale e HR</li>
-        <li>Fridgo per brand food e editorial</li>
-        <li>Branding personalizzato (icona, colori, nome)</li>
-        <li>Distribuzione tramite il tuo account App Store</li>
+        <li data-i18n="svc1.li1">White-label di KarateTracker per dojo e federazioni</li>
+        <li data-i18n="svc1.li2">Gruzzolo per welfare aziendale e HR</li>
+        <li data-i18n="svc1.li3">Fridgo per brand food e editorial</li>
+        <li data-i18n="svc1.li4">Branding personalizzato (icona, colori, nome)</li>
+        <li data-i18n="svc1.li5">Distribuzione tramite il tuo account App Store</li>
       </ul>
-      <a href="mailto:info@navolioappstudio.com?subject=Licensing%20App" class="btn-store">✉️ Parliamone →</a>
+      <a href="mailto:info@navolioappstudio.com?subject=Licensing%20App" class="btn-store" data-i18n="svc1.cta">✉️ Parliamone →</a>
     </div>
 
     <!-- Custom dev -->
     <div class="service-card">
       <div class="service-card-accent" style="background:linear-gradient(90deg,#a78bfa,#60a5fa)"></div>
       <div class="service-icon">⚙️</div>
-      <div class="service-name">Sviluppo custom</div>
-      <div class="service-desc">Hai un'idea, un problema reale, un progetto da costruire. Sviluppiamo la tua app iOS da zero: dalla strategia al deploy in App Store.</div>
+      <div class="service-name" data-i18n="svc2.name">Sviluppo custom</div>
+      <div class="service-desc" data-i18n="svc2.desc">Hai un'idea, un problema reale, un progetto da costruire. Sviluppiamo la tua app iOS da zero: dalla strategia al deploy in App Store.</div>
       <ul class="service-list">
-        <li>SwiftUI nativo iOS/iPadOS/macOS</li>
-        <li>Privacy by design — no tracking, dati locali o CloudKit</li>
-        <li>StoreKit 2 per monetizzazione in-app</li>
-        <li>CBL process: idea → validazione → MVP → store</li>
-        <li>Supporto post-lancio incluso</li>
+        <li data-i18n="svc2.li1">SwiftUI nativo iOS/iPadOS/macOS</li>
+        <li data-i18n="svc2.li2">Privacy by design — no tracking, dati locali o CloudKit</li>
+        <li data-i18n="svc2.li3">StoreKit 2 per monetizzazione in-app</li>
+        <li data-i18n="svc2.li4">CBL process: idea → validazione → MVP → store</li>
+        <li data-i18n="svc2.li5">Supporto post-lancio incluso</li>
       </ul>
-      <a href="mailto:info@navolioappstudio.com?subject=Sviluppo%20App%20Custom" class="btn-store" style="background:linear-gradient(135deg,#a78bfa,#60a5fa);color:#0a0c10;">✉️ Richiedi preventivo →</a>
+      <a href="mailto:info@navolioappstudio.com?subject=Sviluppo%20App%20Custom" class="btn-store" style="background:linear-gradient(135deg,#a78bfa,#60a5fa);color:#0a0c10;" data-i18n="svc2.cta">✉️ Richiedi preventivo →</a>
     </div>
 
     <!-- Consulenza -->
     <div class="service-card">
       <div class="service-card-accent" style="background:linear-gradient(90deg,#34d399,#0ea5e9)"></div>
       <div class="service-icon">🧭</div>
-      <div class="service-name">Consulenza iOS</div>
-      <div class="service-desc">Hai già un team ma ti servono competenze specifiche su SwiftUI, StoreKit, CloudKit o App Store submission. Sessioni di consulenza o advisory continuativo.</div>
+      <div class="service-name" data-i18n="svc3.name">Consulenza iOS</div>
+      <div class="service-desc" data-i18n="svc3.desc">Hai già un team ma ti servono competenze specifiche su SwiftUI, StoreKit, CloudKit o App Store submission. Sessioni di consulenza o advisory continuativo.</div>
       <ul class="service-list">
-        <li>Code review e architettura SwiftUI</li>
-        <li>Setup StoreKit 2 e monetizzazione</li>
-        <li>App Store Connect, submission, review response</li>
-        <li>Privacy policy e compliance GDPR App Store</li>
-        <li>Sessioni da 1h o pacchetti mensili</li>
+        <li data-i18n="svc3.li1">Code review e architettura SwiftUI</li>
+        <li data-i18n="svc3.li2">Setup StoreKit 2 e monetizzazione</li>
+        <li data-i18n="svc3.li3">App Store Connect, submission, review response</li>
+        <li data-i18n="svc3.li4">Privacy policy e compliance GDPR App Store</li>
+        <li data-i18n="svc3.li5">Sessioni da 1h o pacchetti mensili</li>
       </ul>
-      <a href="mailto:info@navolioappstudio.com?subject=Consulenza%20iOS" class="btn-store" style="background:linear-gradient(135deg,#34d399,#0ea5e9);color:#0a0c10;">✉️ Prenota sessione →</a>
+      <a href="mailto:info@navolioappstudio.com?subject=Consulenza%20iOS" class="btn-store" style="background:linear-gradient(135deg,#34d399,#0ea5e9);color:#0a0c10;" data-i18n="svc3.cta">✉️ Prenota sessione →</a>
     </div>
 
   </div>
@@ -756,13 +801,13 @@ footer {
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-label">Studio</div>
+  <div class="section-label" data-i18n="about.label">Studio</div>
   <div class="about-grid">
     <div>
       <div class="about-avatar">👨‍💻</div>
       <div class="about-name">Michele Navolio</div>
-      <div class="about-role">Founder & CEO · Navolio App Studio</div>
-      <p class="about-bio">
+      <div class="about-role" data-i18n="about.role">Founder & CEO · Navolio App Studio</div>
+      <p class="about-bio" data-i18n="about.bio">
         Padre, atleta, nomade digitale, sviluppatore indie. Costruisco app che mi servivano e non trovavo.
         Ogni idea nasce da un'esigenza vissuta in prima persona — poi viene validata con analisi di mercato, ricerche sugli utenti e confronto con i competitor.
       </p>
@@ -772,25 +817,25 @@ footer {
         <a href="https://x.com/michele_navolio" class="about-link" target="_blank" rel="noopener">𝕏 Twitter/X</a>
         <a href="https://www.linkedin.com/in/michelenavolio/" class="about-link" target="_blank" rel="noopener">💼 LinkedIn</a>
         <a href="https://github.com/michelenavolio" class="about-link" target="_blank" rel="noopener">⌨️ GitHub</a>
-        <a href="mailto:michele.navolio@gmail.com" class="about-link">✉️ Email</a>
+        <a href="mailto:michele.navolio@gmail.com" class="about-link" data-i18n="about.email-link">✉️ Email</a>
       </div>
     </div>
     <div class="philosophy-card">
       <div class="phil-item">
-        <div class="phil-label">Filosofia</div>
-        <div class="phil-text">Vita vissuta → ricerca → prodotto. Ogni idea nasce da un'esigenza reale, poi validata con analisi di mercato e ricerche utenti.</div>
+        <div class="phil-label" data-i18n="phil.label1">Filosofia</div>
+        <div class="phil-text" data-i18n="phil.text1">Vita vissuta → ricerca → prodotto. Ogni idea nasce da un'esigenza reale, poi validata con analisi di mercato e ricerche utenti.</div>
       </div>
       <div class="phil-item">
-        <div class="phil-label">Stack</div>
-        <div class="phil-text">SwiftUI · Swift 6 · StoreKit 2 · CloudKit · iOS 17+ · macOS 14+</div>
+        <div class="phil-label" data-i18n="phil.label2">Stack</div>
+        <div class="phil-text" data-i18n="phil.text2">SwiftUI · Swift 6 · StoreKit 2 · CloudKit · iOS 17+ · macOS 14+</div>
       </div>
       <div class="phil-item">
-        <div class="phil-label">Valori</div>
-        <div class="phil-text">Privacy by design · No tracking · No subscription (quando possibile) · Open TestFlight</div>
+        <div class="phil-label" data-i18n="phil.label3">Valori</div>
+        <div class="phil-text" data-i18n="phil.text3">Privacy by design · No tracking · No subscription (quando possibile) · Open TestFlight</div>
       </div>
       <div class="phil-item">
-        <div class="phil-label">Anno Zero</div>
-        <div class="phil-text">2026 è l'anno zero. Tutto quello che costruiamo ora diventa la base per i prossimi 10 anni.</div>
+        <div class="phil-label" data-i18n="phil.label4">Anno Zero</div>
+        <div class="phil-text" data-i18n="phil.text4">2026 è l'anno zero. Tutto quello che costruiamo ora diventa la base per i prossimi 10 anni.</div>
       </div>
     </div>
   </div>
@@ -800,23 +845,23 @@ footer {
 
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
-  <div class="section-label" style="text-align:center;">Contatti</div>
-  <h2 class="section-title" style="text-align:center;margin-bottom:12px;">Scrivici</h2>
-  <p style="text-align:center;color:var(--muted);margin-bottom:44px;">Per supporto, privacy o press.</p>
+  <div class="section-label" style="text-align:center;" data-i18n="contact.label">Contatti</div>
+  <h2 class="section-title" style="text-align:center;margin-bottom:12px;" data-i18n="contact.title">Scrivici</h2>
+  <p style="text-align:center;color:var(--muted);margin-bottom:44px;" data-i18n="contact.sub">Per supporto, privacy o press.</p>
   <div class="contact-grid">
     <div class="contact-card">
       <div class="contact-icon">🛟</div>
-      <div class="contact-label">Supporto</div>
+      <div class="contact-label" data-i18n="contact.support">Supporto</div>
       <div class="contact-val"><a href="mailto:info@navolioappstudio.com">info@navolioappstudio.com</a></div>
     </div>
     <div class="contact-card">
       <div class="contact-icon">🔒</div>
-      <div class="contact-label">Privacy & GDPR</div>
+      <div class="contact-label">Privacy &amp; GDPR</div>
       <div class="contact-val"><a href="mailto:info@navolioappstudio.com">info@navolioappstudio.com</a></div>
     </div>
     <div class="contact-card">
       <div class="contact-icon">📰</div>
-      <div class="contact-label">Press</div>
+      <div class="contact-label" data-i18n="contact.press">Press</div>
       <div class="contact-val"><a href="mailto:info@navolioappstudio.com">info@navolioappstudio.com</a></div>
     </div>
     <div class="contact-card">
@@ -846,16 +891,195 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-left">© 2026 Navolio App Studio · Michele Navolio · P.IVA 14689400969</div>
+  <div class="footer-left" data-i18n="footer.copy">© 2026 Navolio App Studio · Michele Navolio · P.IVA 14689400969</div>
   <ul class="footer-links">
-    <li><a href="privacy/index.html">Privacy Policy</a></li>
-    <li><a href="mailto:info@navolioappstudio.com">Supporto</a></li>
+    <li><a href="privacy/index.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+    <li><a href="mailto:info@navolioappstudio.com" data-i18n="footer.support">Supporto</a></li>
     <li><a href="https://www.instagram.com/michele_navolio/" target="_blank" rel="noopener">Instagram</a></li>
     <li><a href="https://x.com/michele_navolio" target="_blank" rel="noopener">Twitter/X</a></li>
     <li><a href="https://www.linkedin.com/in/michelenavolio/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="https://github.com/michelenavolio" target="_blank" rel="noopener">GitHub</a></li>
   </ul>
 </footer>
+
+<script>
+/* ── Light/dark toggle ── */
+(function () {
+  var root = document.documentElement;
+  var KEY  = 'nas-theme';
+  var btn  = document.getElementById('themeToggle');
+
+  function applyTheme(theme, persist) {
+    root.setAttribute('data-theme', theme);
+    if (persist) localStorage.setItem(KEY, theme);
+    if (btn) btn.textContent = theme === 'light' ? '🌙' : '☀️';
+  }
+
+  var saved = localStorage.getItem(KEY);
+  var osDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved || (osDark ? 'dark' : 'light'), false);
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
+    });
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+    if (!localStorage.getItem(KEY)) applyTheme(e.matches ? 'dark' : 'light', false);
+  });
+})();
+
+/* ── i18n ── */
+(function () {
+  var T = {
+    it: {
+      'nav.app':'App','nav.services':'Servizi','nav.about':'Studio','nav.contact':'Contatti',
+      'hero.tag':'🇮🇹 Indie iOS Studio — Milano',
+      'hero.title':'Vita vissuta<br><span>→ prodotto.</span>',
+      'hero.sub':'App iOS nate da esperienze reali. Ogni app è un capitolo — karate, cucina, finanza, camper, libertà.',
+      'hero.cta1':'Scopri le app →','hero.cta2':'Chi siamo',
+      'apps.label':'Prodotti','apps.title':'Le nostre app',
+      'apps.sub':'18 prodotti in sviluppo. Ogni app nasce da un\'esigenza vissuta in prima persona.',
+      'apps.sub1':'In submission · TestFlight','apps.sub2':'In sviluppo','apps.sub3':'Pipeline · In arrivo',
+      'badge.wip':'In sviluppo','badge.submission':'In Submission','badge.pipeline':'In pipeline','badge.stesura':'In stesura',
+      'btn.coming-soon':'🍎 In arrivo','btn.tf-soon':'🧪 TestFlight presto',
+      'link.support':'Supporto →','link.privacy':'Privacy →',
+      'svc.label':'Servizi','svc.title':'Costruiamo anche per te',
+      'svc.sub':'App proprietarie in licenza o sviluppo custom su misura. Stessa qualità, stesso stack.',
+      'svc1.name':'App in licenza',
+      'svc1.desc':'Acquista una delle nostre app con il tuo branding. Ideale per associazioni sportive, scuole, aziende che vogliono un prodotto iOS già testato e pronto.',
+      'svc1.li1':'White-label di KarateTracker per dojo e federazioni',
+      'svc1.li2':'Gruzzolo per welfare aziendale e HR',
+      'svc1.li3':'Fridgo per brand food e editorial',
+      'svc1.li4':'Branding personalizzato (icona, colori, nome)',
+      'svc1.li5':'Distribuzione tramite il tuo account App Store',
+      'svc1.cta':'✉️ Parliamone →',
+      'svc2.name':'Sviluppo custom',
+      'svc2.desc':'Hai un\'idea, un problema reale, un progetto da costruire. Sviluppiamo la tua app iOS da zero: dalla strategia al deploy in App Store.',
+      'svc2.li1':'SwiftUI nativo iOS/iPadOS/macOS',
+      'svc2.li2':'Privacy by design — no tracking, dati locali o CloudKit',
+      'svc2.li3':'StoreKit 2 per monetizzazione in-app',
+      'svc2.li4':'CBL process: idea → validazione → MVP → store',
+      'svc2.li5':'Supporto post-lancio incluso',
+      'svc2.cta':'✉️ Richiedi preventivo →',
+      'svc3.name':'Consulenza iOS',
+      'svc3.desc':'Hai già un team ma ti servono competenze specifiche su SwiftUI, StoreKit, CloudKit o App Store submission. Sessioni di consulenza o advisory continuativo.',
+      'svc3.li1':'Code review e architettura SwiftUI',
+      'svc3.li2':'Setup StoreKit 2 e monetizzazione',
+      'svc3.li3':'App Store Connect, submission, review response',
+      'svc3.li4':'Privacy policy e compliance GDPR App Store',
+      'svc3.li5':'Sessioni da 1h o pacchetti mensili',
+      'svc3.cta':'✉️ Prenota sessione →',
+      'about.label':'Studio','about.role':'Founder & CEO · Navolio App Studio',
+      'about.bio':'Padre, atleta, nomade digitale, sviluppatore indie. Costruisco app che mi servivano e non trovavo. Ogni idea nasce da un\'esigenza vissuta in prima persona — poi viene validata con analisi di mercato, ricerche sugli utenti e confronto con i competitor.',
+      'about.email-link':'✉️ Email',
+      'phil.label1':'Filosofia','phil.text1':'Vita vissuta → ricerca → prodotto. Ogni idea nasce da un\'esigenza reale, poi validata con analisi di mercato e ricerche utenti.',
+      'phil.label2':'Stack','phil.text2':'SwiftUI · Swift 6 · StoreKit 2 · CloudKit · iOS 17+ · macOS 14+',
+      'phil.label3':'Valori','phil.text3':'Privacy by design · No tracking · No subscription (quando possibile) · Open TestFlight',
+      'phil.label4':'Anno Zero','phil.text4':'2026 è l\'anno zero. Tutto quello che costruiamo ora diventa la base per i prossimi 10 anni.',
+      'contact.label':'Contatti','contact.title':'Scrivici','contact.sub':'Per supporto, privacy o press.',
+      'contact.support':'Supporto','contact.press':'Press',
+      'footer.copy':'© 2026 Navolio App Studio · Michele Navolio · P.IVA 14689400969',
+      'footer.privacy':'Privacy Policy','footer.support':'Supporto'
+    },
+    en: {
+      'nav.app':'Apps','nav.services':'Services','nav.about':'Studio','nav.contact':'Contact',
+      'hero.tag':'🇮🇹 Indie iOS Studio — Milan',
+      'hero.title':'Real life<br><span>→ product.</span>',
+      'hero.sub':'iOS apps born from real experiences. Every app is a chapter — karate, cooking, finance, road trips, freedom.',
+      'hero.cta1':'Explore the apps →','hero.cta2':'About us',
+      'apps.label':'Products','apps.title':'Our apps',
+      'apps.sub':'18 products in development. Every app was born from a first-hand need.',
+      'apps.sub1':'In submission · TestFlight','apps.sub2':'In development','apps.sub3':'Pipeline · Coming soon',
+      'badge.wip':'In development','badge.submission':'In Submission','badge.pipeline':'In pipeline','badge.stesura':'In progress',
+      'btn.coming-soon':'🍎 Coming soon','btn.tf-soon':'🧪 TestFlight soon',
+      'link.support':'Support →','link.privacy':'Privacy →',
+      'svc.label':'Services','svc.title':'We build for you too',
+      'svc.sub':'Our apps available for licensing or fully custom development. Same quality, same stack.',
+      'svc1.name':'App licensing',
+      'svc1.desc':'Get one of our apps with your own branding. Ideal for sports clubs, schools, and companies that want a tested, ready-to-ship iOS product.',
+      'svc1.li1':'KarateTracker white-label for dojos and federations',
+      'svc1.li2':'Gruzzolo for corporate welfare and HR',
+      'svc1.li3':'Fridgo for food brands and editorial',
+      'svc1.li4':'Custom branding (icon, colours, name)',
+      'svc1.li5':'Distribution via your App Store account',
+      'svc1.cta':'✉️ Let\'s talk →',
+      'svc2.name':'Custom development',
+      'svc2.desc':'You have an idea, a real problem, a project to build. We develop your iOS app from scratch — from strategy to App Store deployment.',
+      'svc2.li1':'Native SwiftUI iOS/iPadOS/macOS',
+      'svc2.li2':'Privacy by design — no tracking, local data or CloudKit',
+      'svc2.li3':'StoreKit 2 for in-app monetisation',
+      'svc2.li4':'CBL process: idea → validation → MVP → store',
+      'svc2.li5':'Post-launch support included',
+      'svc2.cta':'✉️ Request a quote →',
+      'svc3.name':'iOS consulting',
+      'svc3.desc':'You already have a team but need specific expertise in SwiftUI, StoreKit, CloudKit or App Store submission. Advisory sessions or ongoing retainer.',
+      'svc3.li1':'SwiftUI code review and architecture',
+      'svc3.li2':'StoreKit 2 setup and monetisation',
+      'svc3.li3':'App Store Connect, submission, review response',
+      'svc3.li4':'Privacy policy and GDPR compliance for App Store',
+      'svc3.li5':'1-hour sessions or monthly packages',
+      'svc3.cta':'✉️ Book a session →',
+      'about.label':'Studio','about.role':'Founder & CEO · Navolio App Studio',
+      'about.bio':'Father, athlete, digital nomad, indie developer. I build apps I needed but couldn\'t find. Every idea comes from a first-hand need — then validated with market analysis, user research and competitor benchmarking.',
+      'about.email-link':'✉️ Email',
+      'phil.label1':'Philosophy','phil.text1':'Real life → research → product. Every idea comes from a genuine need, then validated with market analysis and user research.',
+      'phil.label2':'Stack','phil.text2':'SwiftUI · Swift 6 · StoreKit 2 · CloudKit · iOS 17+ · macOS 14+',
+      'phil.label3':'Values','phil.text3':'Privacy by design · No tracking · No subscription (where possible) · Open TestFlight',
+      'phil.label4':'Year Zero','phil.text4':'2026 is year zero. Everything we build now becomes the foundation for the next 10 years.',
+      'contact.label':'Contact','contact.title':'Write us','contact.sub':'For support, privacy or press.',
+      'contact.support':'Support','contact.press':'Press',
+      'footer.copy':'© 2026 Navolio App Studio · Michele Navolio · VAT 14689400969',
+      'footer.privacy':'Privacy Policy','footer.support':'Support'
+    }
+  };
+
+  function applyLang(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('nas-lang', lang);
+    var btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = lang === 'it' ? 'EN' : 'IT';
+    var t = T[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-html');
+      if (t[k] !== undefined) el.innerHTML = t[k];
+    });
+    /* Repeated app-card text resolved by content pattern */
+    document.querySelectorAll('.app-tagline').forEach(function (el) {
+      var key = 'app.' + el.closest('.app-card').querySelector('.app-name').textContent.trim().toLowerCase().replace(/[^a-z0-9]/g,'');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('.badge-wip').forEach(function (el) {
+      if (t['badge.wip']) el.textContent = t['badge.wip'];
+    });
+    document.querySelectorAll('.btn-store-ghost').forEach(function (el) {
+      var txt = el.textContent.trim();
+      if (txt === '🍎 In arrivo' || txt === '🍎 Coming soon') el.textContent = t['btn.coming-soon'];
+      if (txt === '🧪 TestFlight presto' || txt === '🧪 TestFlight soon') el.textContent = t['btn.tf-soon'];
+    });
+    document.querySelectorAll('.app-link').forEach(function (el) {
+      var txt = el.textContent.trim();
+      if (txt === 'Supporto →' || txt === 'Support →') el.textContent = t['link.support'];
+      if (txt === 'Privacy →') el.textContent = t['link.privacy'];
+    });
+  }
+
+  var saved = localStorage.getItem('nas-lang');
+  applyLang((saved === 'it' || saved === 'en') ? saved : 'it');
+
+  var langBtn = document.getElementById('langToggle');
+  if (langBtn) {
+    langBtn.addEventListener('click', function () {
+      applyLang(document.documentElement.lang === 'it' ? 'en' : 'it');
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
