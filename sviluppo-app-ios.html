@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
+
+<title>Sviluppo App iOS — Navolio App Studio · Michele Navolio · Swift SwiftUI Italia</title>
+<meta name="description" content="Sviluppo app iOS native in Swift e SwiftUI per startup e PMI italiane. Michele Navolio, developer indie con 5+ app pubblicate. Lavoro da remoto in tutta Italia. Portfolio: Vanni, Fridgo, KarateTracker." />
+<meta name="author" content="Michele Navolio" />
+<meta name="robots" content="index, follow" />
+<meta name="keywords" content="sviluppo app iOS, sviluppatore iOS Italia, app iOS Swift, SwiftUI freelance, sviluppo app iPhone, developer iOS freelance Italia" />
+
+<link rel="canonical" href="https://www.navolioappstudio.com/sviluppo-app-ios" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Sviluppo App iOS — Navolio App Studio · Michele Navolio" />
+<meta property="og:description" content="Sviluppo app iOS native in Swift e SwiftUI per startup e PMI italiane. Portfolio: Vanni, Fridgo, KarateTracker. Lavoro da remoto in tutta Italia." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.navolioappstudio.com/sviluppo-app-ios" />
+<meta property="og:image" content="https://www.navolioappstudio.com/assets/og-cover.jpg" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:site_name" content="Navolio App Studio" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@michele_navolio" />
+<meta name="twitter:title" content="Sviluppo App iOS — Michele Navolio · Italia" />
+<meta name="twitter:description" content="App iOS native in Swift/SwiftUI per startup e PMI italiane. Developer indie, remote-first, tutta Italia." />
+<meta name="twitter:image" content="https://www.navolioappstudio.com/assets/og-cover.jpg" />
+
+<!-- Schema.org ProfessionalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Navolio App Studio",
+  "description": "Sviluppo app iOS native in Swift e SwiftUI per startup, PMI e privati italiani. Servizio remote-first disponibile in tutta Italia.",
+  "url": "https://www.navolioappstudio.com/sviluppo-app-ios",
+  "email": "info@navolioappstudio.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Michele Navolio",
+    "url": "https://www.michelenavolio.com",
+    "jobTitle": "iOS Developer",
+    "knowsAbout": ["iOS development", "Swift", "SwiftUI", "Xcode", "App Store Connect", "TestFlight"]
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Italy"
+  },
+  "serviceType": "Sviluppo App iOS",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceType": "Online / Remote",
+    "availableLanguage": ["Italian", "English"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servizi iOS",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sviluppo app iOS nativa Swift/SwiftUI"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pubblicazione App Store"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consulenza iOS per startup"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Licensing app esistenti"}}
+    ]
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/michelenavolio/",
+    "https://medium.com/@michelenavolio"
+  ]
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quanto costa sviluppare un'app iOS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Il costo di sviluppo di un'app iOS dipende dalla complessità: un MVP semplice parte da €3.000-8.000, un'app con funzionalità avanzate (backend, mappe, acquisti in-app) può arrivare a €15.000-40.000+. Lavoro con tariffe orarie o a progetto fisso — contattami per un preventivo specifico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lavori con clienti in tutta Italia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì, Navolio App Studio è un studio remote-first. Collaboro con startup e PMI da tutta Italia — Milano, Roma, Torino, Napoli, Bologna, Firenze e ogni altra città. Le riunioni sono via video call, il codice è su GitHub, i rilasci tramite TestFlight prima e App Store poi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo ci vuole per sviluppare un'app iOS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un MVP (Minimum Viable Product) per iOS si sviluppa in 6-12 settimane. Un'app completa con design personalizzato, backend e funzionalità avanzate richiede 3-6 mesi. La revisione Apple per l'App Store richiede tipicamente 1-3 giorni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Usi Swift o React Native?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sviluppo esclusivamente in Swift e SwiftUI — tecnologie native Apple. Nessun framework ibrido (React Native, Flutter). Questo garantisce performance ottimali, accesso a tutte le API iOS (CarPlay, HealthKit, CoreML, ecc.) e un'esperienza utente perfettamente integrata con l'ecosistema Apple."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hai un portfolio di app iOS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Ho sviluppato e pubblicato: Vanni (app camper con CarPlay e mappe), Fridgo (ricette AI da ingredienti del frigo), KarateTracker (diario allenamento Shotokan), Gruzzolo (finanza personale), e altri progetti in TestFlight. Tutte app native Swift/SwiftUI."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G8H6HRZQ7W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G8H6HRZQ7W', { anonymize_ip: true });
+</script>
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:      #0a0c10;
+  --bg2:     #111318;
+  --bg3:     #161b22;
+  --border:  #1e2530;
+  --text:    #edf2f7;
+  --muted:   #7a8694;
+  --gold:    #fbbf24;
+  --amber:   #e67e22;
+  --blue:    #60a5fa;
+  --green:   #34d399;
+  --purple:  #a78bfa;
+  --grad:    linear-gradient(135deg, #fbbf24, #e67e22);
+  --radius:  16px;
+  --max:     1100px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(10,12,16,0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 clamp(20px,5vw,60px);
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-size: 1rem; font-weight: 700;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.nav-links { display: flex; gap: 24px; list-style: none; }
+.nav-links a { font-size: 0.85rem; color: var(--muted); transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  padding: 8px 20px; background: var(--gold); color: #000;
+  border-radius: 100px; font-size: 0.85rem; font-weight: 700;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--amber); }
+@media (max-width: 640px) { .nav-links { display: none; } }
+
+/* CONTAINER */
+.container { max-width: var(--max); margin: 0 auto; padding: 0 clamp(20px,5vw,60px); }
+
+/* HERO */
+.hero {
+  padding: 100px clamp(20px,5vw,60px) 80px;
+  max-width: var(--max); margin: 0 auto;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(251,191,36,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25);
+  color: var(--gold); border-radius: 100px;
+  padding: 6px 16px; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800; line-height: 1.1;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: normal;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted); max-width: 620px;
+  margin-bottom: 40px; line-height: 1.75;
+}
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+.pill {
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 0.8rem; font-weight: 600;
+  border: 1px solid var(--border); color: var(--muted);
+}
+.pill-swift  { background: rgba(255,120,0,0.08); border-color: rgba(255,120,0,0.3); color: #ff8c42; }
+.pill-swiftui{ background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.3); color: var(--blue); }
+.pill-native { background: rgba(52,211,153,0.08); border-color: rgba(52,211,153,0.3); color: var(--green); }
+.pill-remote { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.3); color: var(--purple); }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  padding: 14px 32px; background: var(--gold); color: #000;
+  border-radius: 100px; font-weight: 700; font-size: 0.95rem;
+  transition: background .2s, transform .2s;
+}
+.btn-primary:hover { background: var(--amber); transform: translateY(-2px); }
+.btn-ghost {
+  padding: 14px 32px; border: 1.5px solid var(--border); color: var(--muted);
+  border-radius: 100px; font-size: 0.95rem;
+  transition: border-color .2s, color .2s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--text); }
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--border); margin: 0; }
+
+/* SECTIONS */
+section { padding: 80px 0; }
+.section-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 800; line-height: 1.15; margin-bottom: 16px;
+}
+.section-sub { color: var(--muted); font-size: 1.05rem; max-width: 580px; margin-bottom: 48px; }
+
+/* SERVICES GRID */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.service-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: border-color .2s, transform .2s;
+}
+.service-card:hover { border-color: rgba(251,191,36,0.4); transform: translateY(-3px); }
+.service-icon { font-size: 2rem; margin-bottom: 16px; }
+.service-name { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; }
+.service-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+/* HOW I WORK */
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step {
+  display: grid; grid-template-columns: 56px 1fr;
+  gap: 24px; padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+.step:last-child { border-bottom: none; }
+.step-num {
+  width: 48px; height: 48px;
+  border-radius: 50%; background: rgba(251,191,36,0.1);
+  border: 1.5px solid rgba(251,191,36,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1rem; color: var(--gold);
+  flex-shrink: 0;
+}
+.step-title { font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+.step-desc { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+/* PORTFOLIO */
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 20px; }
+.portfolio-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 28px 24px; position: relative; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.portfolio-card:hover { border-color: rgba(251,191,36,0.4); transform: translateY(-3px); }
+.portfolio-accent {
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.portfolio-icon { font-size: 2.2rem; margin-bottom: 16px; display: block; }
+.portfolio-name { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+.portfolio-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+.portfolio-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+  padding: 3px 10px; border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+  background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--muted);
+}
+
+/* TECH STACK */
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 16px; }
+.tech-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; text-align: center;
+  transition: border-color .2s;
+}
+.tech-card:hover { border-color: rgba(251,191,36,0.3); }
+.tech-icon { font-size: 1.8rem; margin-bottom: 10px; }
+.tech-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+.tech-role { font-size: 0.78rem; color: var(--muted); }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+details.faq-item {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden;
+}
+details.faq-item[open] { border-color: rgba(251,191,36,0.3); }
+details.faq-item summary {
+  padding: 20px 24px; cursor: pointer;
+  font-weight: 700; font-size: 0.95rem;
+  display: flex; justify-content: space-between; align-items: center;
+  list-style: none; user-select: none;
+}
+details.faq-item summary::-webkit-details-marker { display: none; }
+details.faq-item summary::after {
+  content: '+'; color: var(--gold); font-size: 1.2rem;
+  transition: transform .2s;
+}
+details.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-answer {
+  padding: 0 24px 20px; color: var(--muted);
+  font-size: 0.92rem; line-height: 1.8;
+}
+
+/* CTA BAND */
+.cta-band {
+  background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 80px clamp(20px,5vw,60px);
+  text-align: center;
+}
+.cta-band h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800; margin-bottom: 16px;
+}
+.cta-band h2 em {
+  font-style: normal;
+  background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.cta-band p { color: var(--muted); font-size: 1.05rem; margin-bottom: 36px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-email {
+  padding: 16px 36px; background: var(--gold); color: #000;
+  border-radius: 100px; font-weight: 700; font-size: 1rem;
+  transition: background .2s, transform .2s;
+}
+.btn-email:hover { background: var(--amber); transform: translateY(-2px); }
+.btn-wa {
+  padding: 16px 36px; background: #25D366; color: #fff;
+  border-radius: 100px; font-weight: 700; font-size: 1rem;
+  transition: background .2s, transform .2s;
+}
+.btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
+
+/* FOOTER */
+footer {
+  padding: 32px clamp(20px,5vw,60px);
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-weight: 700; font-size: 0.9rem; color: var(--muted); }
+.footer-links { display: flex; gap: 20px; list-style: none; }
+.footer-links a { font-size: 0.82rem; color: var(--muted); transition: color .2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* FOCUS */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<nav aria-label="Navigazione principale">
+  <a href="/" class="nav-logo">Navolio App Studio</a>
+  <ul class="nav-links">
+    <li><a href="/#app">Portfolio</a></li>
+    <li><a href="/#about">Chi siamo</a></li>
+    <li><a href="/sviluppatore-app-rozzano">Locale</a></li>
+    <li><a href="#contatto" class="nav-cta">Contattami →</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-badge">🇮🇹 Remote-first · Tutta Italia</div>
+  <h1 id="hero-title">
+    <em>Sviluppo App iOS</em><br>per startup e PMI italiane
+  </h1>
+  <p class="hero-sub">
+    App iOS native in Swift e SwiftUI — nessun framework ibrido, nessun compromesso.
+    Michele Navolio, developer indie con base a Milano, disponibile da remoto
+    per clienti in tutta Italia.
+  </p>
+  <div class="hero-pills">
+    <span class="pill pill-swift">Swift 6</span>
+    <span class="pill pill-swiftui">SwiftUI</span>
+    <span class="pill pill-native">100% Nativo</span>
+    <span class="pill pill-remote">Remote Italia</span>
+    <span class="pill">App Store ✓</span>
+    <span class="pill">TestFlight ✓</span>
+    <span class="pill">CarPlay ✓</span>
+  </div>
+  <div class="hero-actions">
+    <a href="#contatto" class="btn-primary">Richiedi un preventivo →</a>
+    <a href="#portfolio" class="btn-ghost">Vedi il portfolio</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVIZI -->
+<section aria-labelledby="servizi-title">
+  <div class="container">
+    <div class="section-label">Servizi</div>
+    <h2 id="servizi-title" class="section-title">Cosa sviluppo</h2>
+    <p class="section-sub">Dalla prima wireframe alla pubblicazione App Store — gestisco l'intero ciclo di vita di un'app iOS.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <div class="service-name">App iOS native</div>
+        <div class="service-desc">Sviluppo in Swift e SwiftUI per iPhone e iPad. Performance native, accessibilità, dark mode, Dynamic Type — tutto integrato fin dal primo sprint.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <div class="service-name">MVP e proof of concept</div>
+        <div class="service-desc">Hai un'idea ma non sai se funziona? Costruisco un MVP testabile in 6-8 settimane. TestFlight per i tuoi utenti, feedback rapido, iterazioni veloci.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔌</div>
+        <div class="service-name">Integrazione API e backend</div>
+        <div class="service-desc">Collegamento a REST API, Firebase, Supabase, CoreData, CloudKit. Sync offline-first, notifiche push, autenticazione sicura.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗺️</div>
+        <div class="service-name">Mappe e CarPlay</div>
+        <div class="service-desc">MapKit, CoreLocation, navigazione turn-by-turn, integrazione CarPlay. Specializzazione maturata con Vanni — l'app camper con 3.000+ km di test reali.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏪</div>
+        <div class="service-name">Pubblicazione App Store</div>
+        <div class="service-desc">Gestione completa dell'iter Apple: certificati, provisioning, screenshot, metadata, localizzazioni, review. Zero sorprese al momento del rilascio.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <div class="service-name">Consulenza e audit</div>
+        <div class="service-desc">Hai già un'app ma vuole una seconda opinione? Revisione codice, analisi performance, suggerimenti architetturali. Anche un singolo call è utile.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COME LAVORO -->
+<section aria-labelledby="metodo-title">
+  <div class="container">
+    <div class="section-label">Metodo</div>
+    <h2 id="metodo-title" class="section-title">Come lavoro con te</h2>
+    <p class="section-sub">Remote-first. Comunicazione asincrona. Delivery ogni 2 settimane. Nessuna burocrazia.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Discovery call (30 min, gratis)</div>
+          <div class="step-desc">Capisco il tuo progetto, il budget indicativo, le tempistiche. Posso dirti subito se è fattibile e con quale approccio. Nessun impegno.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Proposta e preventivo</div>
+          <div class="step-desc">Documento tecnico con scope, milestone, costi e tempi. Formato fisso o time &amp; material, decidiamo insieme in base alla certezza dei requisiti.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Sprint bisettimanali su TestFlight</div>
+          <div class="step-desc">Ogni 2 settimane ricevi una build testabile su TestFlight. Vedi l'app crescere in tempo reale, fornisci feedback immediato, adattiamo il prodotto.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Rilascio App Store</div>
+          <div class="step-desc">Gestisco la submission Apple, il processo di review e il rilascio. Assistenza per i primi 30 giorni post-lancio inclusa.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" aria-labelledby="portfolio-title">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 id="portfolio-title" class="section-title">App iOS sviluppate</h2>
+    <p class="section-sub">Ogni app è un progetto reale, pubblicato o in TestFlight. Nessun mockup.</p>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-accent" style="background:linear-gradient(90deg,#4A90E2,#2DD4BF)"></div>
+        <span class="portfolio-icon">🚐</span>
+        <div class="portfolio-name">Vanni</div>
+        <div class="portfolio-desc">App camper completa: pianificazione viaggi, diario di bordo, POI, meteo integrato, navigazione e CarPlay. Nata da 3.000 km di vita in camper.</div>
+        <div class="portfolio-tags">
+          <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">MapKit</span><span class="tag">CarPlay</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-accent" style="background:linear-gradient(90deg,#FF6B2B,#FF9500)"></div>
+        <span class="portfolio-icon">🍳</span>
+        <div class="portfolio-name">Fridgo</div>
+        <div class="portfolio-desc">Cucina con quello che hai in frigo. AI che trasforma gli ingredienti disponibili in ricette, piani pasto settimanali e lista della spesa.</div>
+        <div class="portfolio-tags">
+          <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">CoreML</span><span class="tag">TestFlight</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-accent" style="background:linear-gradient(90deg,#C8102E,#8B0000)"></div>
+        <span class="portfolio-icon">🥋</span>
+        <div class="portfolio-name">KarateTracker</div>
+        <div class="portfolio-desc">Il dojo tascabile Shotokan. Diario allenamenti, progressione kata, statistiche avanzate e progressione cintura per praticanti e insegnanti.</div>
+        <div class="portfolio-tags">
+          <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">CoreData</span><span class="tag">App Store</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-accent" style="background:linear-gradient(90deg,#00C896,#007AFF)"></div>
+        <span class="portfolio-icon">🪙</span>
+        <div class="portfolio-name">Gruzzolo</div>
+        <div class="portfolio-desc">Finanza personale semplice e privata. Traccia spese, monitora obiettivi di risparmio e visualizza il tuo FIRE number — tutto offline, nessun cloud.</div>
+        <div class="portfolio-tags">
+          <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Charts</span><span class="tag">Privacy-first</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TECH STACK -->
+<section aria-labelledby="tech-title">
+  <div class="container">
+    <div class="section-label">Tecnologie</div>
+    <h2 id="tech-title" class="section-title">Stack tecnico</h2>
+    <p class="section-sub">Solo tecnologie native Apple — zero dipendenze esterne non necessarie.</p>
+
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-icon">🦅</div>
+        <div class="tech-name">Swift 6</div>
+        <div class="tech-role">Linguaggio principale</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🎨</div>
+        <div class="tech-name">SwiftUI</div>
+        <div class="tech-role">UI framework</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🔨</div>
+        <div class="tech-name">Xcode 16</div>
+        <div class="tech-role">IDE &amp; build</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🗺️</div>
+        <div class="tech-name">MapKit</div>
+        <div class="tech-role">Mappe e navigazione</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">💾</div>
+        <div class="tech-name">CoreData / SwiftData</div>
+        <div class="tech-role">Persistenza locale</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🧪</div>
+        <div class="tech-name">TestFlight</div>
+        <div class="tech-role">Beta testing</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🚗</div>
+        <div class="tech-name">CarPlay</div>
+        <div class="tech-role">In-car experience</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-icon">🤖</div>
+        <div class="tech-name">CoreML / AI</div>
+        <div class="tech-role">Machine learning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FAQ -->
+<section aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 id="faq-title" class="section-title">Domande frequenti</h2>
+    <p class="section-sub" style="margin-bottom:32px;">Le domande che mi fanno più spesso i clienti prima di iniziare.</p>
+
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Quanto costa sviluppare un'app iOS?</summary>
+        <div class="faq-answer">
+          Dipende dalla complessità. Un MVP semplice parte da <strong>€3.000–8.000</strong>. Un'app con backend, mappe, acquisti in-app e design personalizzato può arrivare a €15.000–40.000+. Lavoro a progetto fisso (ideale se i requisiti sono chiari) o time &amp; material (ideale per prodotti in evoluzione). Contattami per un preventivo specifico — la discovery call iniziale è gratuita.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Lavori con clienti in tutta Italia?</summary>
+        <div class="faq-answer">
+          Sì. Navolio App Studio è <strong>remote-first</strong> — collaboro con startup e PMI da tutta Italia: Milano, Roma, Torino, Napoli, Bologna, Firenze, Palermo e ogni altra città. Le riunioni sono via video call (Google Meet o Zoom), il codice è su GitHub con accesso condiviso, i rilasci tramite TestFlight prima e App Store poi.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo ci vuole per sviluppare un'app iOS?</summary>
+        <div class="faq-answer">
+          Un <strong>MVP testabile</strong> in 6–10 settimane. Un'app completa con design personalizzato, backend e funzionalità avanzate: 3–6 mesi. La revisione Apple per l'App Store richiede tipicamente 1–3 giorni lavorativi. Uso sprint bisettimanali con build TestFlight — vedi progress concreto ogni 2 settimane.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Perché Swift nativo e non React Native o Flutter?</summary>
+        <div class="faq-answer">
+          Sviluppo esclusivamente in <strong>Swift e SwiftUI</strong> — tecnologie native Apple. Questo garantisce: performance ottimali (60fps stabili), accesso completo a tutte le API iOS (CarPlay, HealthKit, CoreML, Shortcuts, Widgets, Live Activities), aggiornamento immediato a ogni nuova versione iOS, e un'esperienza utente indistinguibile dalle app Apple stesse. I framework ibridi sono un compromesso — io preferisco non farlo.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Posso vedere il codice durante lo sviluppo?</summary>
+        <div class="faq-answer">
+          Sì, sempre. Il codice vive su un repository <strong>GitHub privato condiviso</strong> — hai accesso in lettura (o scrittura, se hai un tuo team tecnico) fin dal primo giorno. Nessun black box.
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary>Hai esperienza con app già in produzione?</summary>
+        <div class="faq-answer">
+          Ho sviluppato e gestito app dall'idea alla pubblicazione. Portfolio attivo: <strong>Vanni</strong> (app camper, TestFlight live), <strong>Fridgo</strong> (ricette AI, TestFlight), <strong>KarateTracker</strong> (App Store submission in corso), <strong>Gruzzolo</strong> (finanza personale). Ogni progetto è documentato con scelte tecniche e tradeoff.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band" id="contatto">
+  <h2>Hai un'idea per <em>un'app iOS</em>?</h2>
+  <p>Parliamone in una call gratuita di 30 minuti. Nessun impegno — solo chiarezza su fattibilità e costi.</p>
+  <div class="cta-buttons">
+    <a href="mailto:info@navolioappstudio.com?subject=Preventivo%20sviluppo%20app%20iOS" class="btn-email">✉ Scrivimi una email</a>
+    <a href="https://wa.me/393495605520?text=Ciao%20Michele%2C%20vorrei%20sviluppare%20un%27app%20iOS" target="_blank" rel="noopener" class="btn-wa">💬 WhatsApp</a>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <span class="footer-logo">© 2026 Navolio App Studio · Michele Navolio</span>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#app">App</a></li>
+    <li><a href="/sviluppatore-app-rozzano">Rozzano · Milano</a></li>
+    <li><a href="https://www.michelenavolio.com" target="_blank" rel="noopener">michelenavolio.com</a></li>
+    <li><a href="privacy/index.html">Privacy</a></li>
+  </ul>
+</footer>
+
+<!-- WhatsApp sticky -->
+<a href="https://wa.me/393495605520?text=Ciao%20Michele%2C%20vorrei%20sviluppare%20un%27app%20iOS"
+   target="_blank" rel="noopener"
+   aria-label="Scrivimi su WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9999;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script>
+(function () {
+  'use strict';
+  if (typeof gtag !== 'function') return;
+  function track(n, p) { p = p || {}; p.page = 'sviluppo-app-ios'; gtag('event', n, p); }
+
+  document.querySelectorAll('.btn-email').forEach(function(a) {
+    a.addEventListener('click', function() {
+      track('email_click', { location: 'cta_band' });
+    });
+  });
+  document.querySelectorAll('.btn-wa,.btn-ghost').forEach(function(a) {
+    a.addEventListener('click', function() {
+      track('outbound_click', { link_text: (a.innerText||'').trim().slice(0,40) });
+    });
+  });
+  document.querySelectorAll('.faq-item').forEach(function(d) {
+    d.addEventListener('toggle', function() {
+      if (!d.open) return;
+      track('faq_open', { faq_question: (d.querySelector('summary')||{}).innerText||'' });
+    });
+  });
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement;
+    var pct = Math.round(((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100);
+    [25,50,75,90].forEach(function(m) {
+      if (pct >= m && !fired[m]) { fired[m] = true; track('scroll_depth', {percent: m}); }
+    });
+  }, {passive: true});
+})();
+</script>
+</body>
+</html>

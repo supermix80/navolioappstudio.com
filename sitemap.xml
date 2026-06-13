@@ -3,9 +3,23 @@
 
   <url>
     <loc>https://www.navolioappstudio.com/</loc>
-    <lastmod>2026-06-11</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.navolioappstudio.com/sviluppo-app-ios</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.navolioappstudio.com/sviluppatore-app-rozzano</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -74,6 +88,13 @@
   <url>
     <loc>https://www.navolioappstudio.com/support/lego.html</loc>
     <lastmod>2026-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.navolioappstudio.com/support/gruzzolo.html</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
