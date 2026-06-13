@@ -64,6 +64,27 @@
 }
 </script>
 
+<!-- Schema.org LocalBusiness (SEO locale — Rozzano / Milano) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Navolio App Studio",
+  "description": "Studio di sviluppo app iOS native a Rozzano, Milano.",
+  "url": "https://navolioappstudio.com",
+  "email": "michele.navolio@gmail.com",
+  "founder": {"@type": "Person", "name": "Michele Navolio"},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rozzano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "areaServed": ["Rozzano", "Milano", "Hinterland Milanese"],
+  "knowsAbout": ["iOS development", "Swift", "SwiftUI", "App Store"]
+}
+</script>
+
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G8H6HRZQ7W"></script>
 <script>
@@ -399,7 +420,18 @@ footer {
 [data-theme="light"] nav { background: rgba(248,250,252,0.92); }
 [data-theme="light"] .hero-title { background: linear-gradient(180deg,#0f172a 30%,rgba(15,23,42,0.65)); -webkit-background-clip:text; background-clip:text; }
 [data-theme="light"] .btn-primary { color: #fff; }
+[data-theme="dark"] {
+  --bg:     #0a0c10;
+  --bg2:    #111318;
+  --bg3:    #161b22;
+  --border: #1e2530;
+  --text:   #edf2f7;
+  --muted:  #7a8694;
+  --shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
 [data-theme="dark"] nav { background: rgba(10,12,16,0.85); }
+[data-theme="dark"] .hero-title { background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.6)); -webkit-background-clip:text; background-clip:text; }
+[data-theme="dark"] .btn-primary { color: #0a0c10; }
 
 /* ── Nav controls ── */
 .nav-controls { display: flex; align-items: center; gap: 8px; }
@@ -412,6 +444,49 @@ footer {
 }
 .nav-icon-btn:hover { border-color: var(--gold); color: var(--gold); }
 @media (max-width: 600px) { .nav-controls { display: none; } }
+
+/* ── Service Form (Formspree) ── */
+.service-form {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-top: 4px;
+}
+.service-form-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+@media (max-width: 500px) { .service-form-row { grid-template-columns: 1fr; } }
+.service-form-input,
+.service-form-textarea {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px;
+  transition: border-color .2s;
+  outline: none;
+  width: 100%;
+}
+.service-form-input:focus,
+.service-form-textarea:focus { border-color: var(--gold); }
+.service-form-input::placeholder,
+.service-form-textarea::placeholder { color: var(--muted); }
+.service-form-textarea { min-height: 90px; resize: vertical; }
+.service-form-submit {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--text); color: var(--bg);
+  font-size: 13px; font-weight: 700; padding: 10px 18px;
+  border-radius: 9px; border: none; cursor: pointer;
+  transition: opacity .2s; font-family: inherit;
+  align-self: flex-start;
+}
+.service-form-submit:hover { opacity: .85; }
+.service-form-submit-grad {
+  background: linear-gradient(135deg,#a78bfa,#60a5fa); color: #0a0c10;
+}
+.service-form-submit-teal {
+  background: linear-gradient(135deg,#34d399,#0ea5e9); color: #0a0c10;
+}
 
 /* ── Responsive ── */
 @media (max-width: 600px) {
@@ -759,7 +834,14 @@ footer {
         <li data-i18n="svc1.li4">Branding personalizzato (icona, colori, nome)</li>
         <li data-i18n="svc1.li5">Distribuzione tramite il tuo account App Store</li>
       </ul>
-      <a href="mailto:info@navolioappstudio.com?subject=Licensing%20App" class="btn-store" data-i18n="svc1.cta">✉️ Parliamone →</a>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSclxlbQMH9ewsZjJ7qr2F7j8UtYtrOOqt6ezzriMpdtYZeFWg/formResponse" method="POST" target="gf-hidden-nas" class="service-form" onsubmit="this.querySelector('.service-form-submit').textContent='✓ Inviato!';this.querySelector('.service-form-submit').disabled=true;">
+        <div class="service-form-row">
+          <input type="text" name="entry.2005620554" placeholder="Nome" required class="service-form-input">
+          <input type="email" name="entry.1045781291" placeholder="Email" required class="service-form-input">
+        </div>
+        <textarea name="entry.839337160" placeholder="Interesse: App in licenza — scrivi il tuo messaggio..." required class="service-form-textarea"></textarea>
+        <button type="submit" class="service-form-submit">✉️ Parliamone →</button>
+      </form>
     </div>
 
     <!-- Custom dev -->
@@ -775,7 +857,14 @@ footer {
         <li data-i18n="svc2.li4">CBL process: idea → validazione → MVP → store</li>
         <li data-i18n="svc2.li5">Supporto post-lancio incluso</li>
       </ul>
-      <a href="mailto:info@navolioappstudio.com?subject=Sviluppo%20App%20Custom" class="btn-store" style="background:linear-gradient(135deg,#a78bfa,#60a5fa);color:#0a0c10;" data-i18n="svc2.cta">✉️ Richiedi preventivo →</a>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSclxlbQMH9ewsZjJ7qr2F7j8UtYtrOOqt6ezzriMpdtYZeFWg/formResponse" method="POST" target="gf-hidden-nas" class="service-form" onsubmit="this.querySelector('.service-form-submit').textContent='✓ Inviato!';this.querySelector('.service-form-submit').disabled=true;">
+        <div class="service-form-row">
+          <input type="text" name="entry.2005620554" placeholder="Nome" required class="service-form-input">
+          <input type="email" name="entry.1045781291" placeholder="Email" required class="service-form-input">
+        </div>
+        <textarea name="entry.839337160" placeholder="Interesse: Sviluppo custom — descrivi la tua idea..." required class="service-form-textarea"></textarea>
+        <button type="submit" class="service-form-submit service-form-submit-grad">✉️ Richiedi preventivo →</button>
+      </form>
     </div>
 
     <!-- Consulenza -->
@@ -791,10 +880,18 @@ footer {
         <li data-i18n="svc3.li4">Privacy policy e compliance GDPR App Store</li>
         <li data-i18n="svc3.li5">Sessioni da 1h o pacchetti mensili</li>
       </ul>
-      <a href="mailto:info@navolioappstudio.com?subject=Consulenza%20iOS" class="btn-store" style="background:linear-gradient(135deg,#34d399,#0ea5e9);color:#0a0c10;" data-i18n="svc3.cta">✉️ Prenota sessione →</a>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSclxlbQMH9ewsZjJ7qr2F7j8UtYtrOOqt6ezzriMpdtYZeFWg/formResponse" method="POST" target="gf-hidden-nas" class="service-form" onsubmit="this.querySelector('.service-form-submit').textContent='✓ Inviato!';this.querySelector('.service-form-submit').disabled=true;">
+        <div class="service-form-row">
+          <input type="text" name="entry.2005620554" placeholder="Nome" required class="service-form-input">
+          <input type="email" name="entry.1045781291" placeholder="Email" required class="service-form-input">
+        </div>
+        <textarea name="entry.839337160" placeholder="Interesse: Consulenza iOS — descrivi cosa ti serve..." required class="service-form-textarea"></textarea>
+        <button type="submit" class="service-form-submit service-form-submit-teal">✉️ Prenota sessione →</button>
+      </form>
     </div>
 
   </div>
+  <iframe name="gf-hidden-nas" style="display:none;" aria-hidden="true"></iframe>
 </section>
 
 <div class="divider"></div>
@@ -817,7 +914,7 @@ footer {
         <a href="https://x.com/michele_navolio" class="about-link" target="_blank" rel="noopener">𝕏 Twitter/X</a>
         <a href="https://www.linkedin.com/in/michelenavolio/" class="about-link" target="_blank" rel="noopener">💼 LinkedIn</a>
         <a href="https://github.com/michelenavolio" class="about-link" target="_blank" rel="noopener">⌨️ GitHub</a>
-        <a href="mailto:michele.navolio@gmail.com" class="about-link" data-i18n="about.email-link">✉️ Email</a>
+        <a href="mailto:info@navolioappstudio.com?subject=Ciao%20%E2%80%94%20Navolio%20App%20Studio" class="about-link" data-i18n="about.email-link">✉️ Email</a>
       </div>
     </div>
     <div class="philosophy-card">
@@ -852,17 +949,17 @@ footer {
     <div class="contact-card">
       <div class="contact-icon">🛟</div>
       <div class="contact-label" data-i18n="contact.support">Supporto</div>
-      <div class="contact-val"><a href="mailto:info@navolioappstudio.com">info@navolioappstudio.com</a></div>
+      <div class="contact-val"><a href="mailto:info@navolioappstudio.com?subject=Supporto%20App%20Navolio%20Studio">info@navolioappstudio.com</a></div>
     </div>
     <div class="contact-card">
       <div class="contact-icon">🔒</div>
       <div class="contact-label">Privacy &amp; GDPR</div>
-      <div class="contact-val"><a href="mailto:info@navolioappstudio.com">info@navolioappstudio.com</a></div>
+      <div class="contact-val"><a href="mailto:info@navolioappstudio.com?subject=Privacy%20%26%20GDPR">info@navolioappstudio.com</a></div>
     </div>
     <div class="contact-card">
       <div class="contact-icon">📰</div>
       <div class="contact-label" data-i18n="contact.press">Press</div>
-      <div class="contact-val"><a href="mailto:info@navolioappstudio.com">info@navolioappstudio.com</a></div>
+      <div class="contact-val"><a href="mailto:info@navolioappstudio.com?subject=Press%20%E2%80%94%20Navolio%20App%20Studio">info@navolioappstudio.com</a></div>
     </div>
     <div class="contact-card">
       <div class="contact-icon">📸</div>
@@ -884,6 +981,11 @@ footer {
       <div class="contact-label">GitHub</div>
       <div class="contact-val"><a href="https://github.com/michelenavolio" target="_blank" rel="noopener">michelenavolio</a></div>
     </div>
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">WhatsApp</div>
+      <div class="contact-val"><a href="https://wa.me/393495605520?text=Ciao%20Michele%2C%20vorrei%20informazioni%20su%20Navolio%20App%20Studio" target="_blank" rel="noopener">+39 349 560 5520</a></div>
+    </div>
   </div>
 </section>
 
@@ -894,8 +996,9 @@ footer {
   <div class="footer-left" data-i18n="footer.copy">© 2026 Navolio App Studio · Michele Navolio · P.IVA 14689400969</div>
   <ul class="footer-links">
     <li><a href="privacy/index.html" data-i18n="footer.privacy">Privacy Policy</a></li>
-    <li><a href="mailto:info@navolioappstudio.com" data-i18n="footer.support">Supporto</a></li>
+    <li><a href="mailto:info@navolioappstudio.com?subject=Supporto%20App%20Navolio%20Studio" data-i18n="footer.support">Supporto</a></li>
     <li><a href="https://www.instagram.com/michele_navolio/" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="sviluppatore-app-rozzano.html">App iOS Rozzano</a></li>
     <li><a href="https://x.com/michele_navolio" target="_blank" rel="noopener">Twitter/X</a></li>
     <li><a href="https://www.linkedin.com/in/michelenavolio/" target="_blank" rel="noopener">LinkedIn</a></li>
     <li><a href="https://github.com/michelenavolio" target="_blank" rel="noopener">GitHub</a></li>
@@ -1116,6 +1219,167 @@ footer {
   }
 })();
 </script>
+
+<!-- ──────────────────────────────────────────────────────
+     CRO Tracking — navolioappstudio.com (v1, 2026-06)
+     9 eventi GA4 (G-G8H6HRZQ7W). Vedi cro_plan_2026-06.md
+────────────────────────────────────────────────────── -->
+<script>
+(function () {
+  'use strict';
+  if (typeof gtag !== 'function') return;
+  var SITE = 'navolio_studio';
+  function track(name, params) {
+    params = params || {};
+    params.site = SITE;
+    gtag('event', name, params);
+  }
+
+  function appStatus(card) {
+    if (!card) return 'unknown';
+    if (card.querySelector('.badge-live')) return 'live';
+    if (card.querySelector('.badge-tf'))   return 'testflight';
+    if (card.querySelector('.badge-wip'))  return 'wip';
+    return 'unknown';
+  }
+
+  /* 1. App card click */
+  document.addEventListener('click', function (e) {
+    var card = e.target.closest('.app-card');
+    if (!card) return;
+    track('app_card_click', {
+      app_name:   card.querySelector('.app-name')?.innerText.trim() || 'unknown',
+      app_status: appStatus(card),
+      click_target: e.target.tagName.toLowerCase()
+    });
+  });
+
+  /* 2. Service inquiry */
+  document.querySelectorAll('.service-card a[href^="mailto:"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var card = a.closest('.service-card');
+      var subject = decodeURIComponent((a.href.split('subject=')[1] || ''));
+      track('service_inquiry', {
+        service_type:   card?.querySelector('.service-name')?.innerText.trim() || 'unknown',
+        mailto_subject: subject,
+        cta_text:       (a.innerText || '').trim().slice(0,40)
+      });
+    });
+  });
+
+  /* 3. App store / external app click */
+  document.querySelectorAll('.btn-store').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var card = a.closest('.app-card');
+      var href = a.getAttribute('href') || '';
+      var store = href.includes('testflight') ? 'testflight'
+               : href.includes('apps.apple') ? 'app_store'
+               : href.includes('vanniapp')   ? 'vanniapp'
+               : 'other';
+      track('app_store_click', {
+        app_name: card?.querySelector('.app-name')?.innerText.trim() || 'unknown',
+        store: store,
+        link_url: href
+      });
+    });
+  });
+
+  /* 4. Social click */
+  var SOCIAL_MAP = {
+    'instagram.com':'instagram', 'linkedin.com':'linkedin',
+    'medium.com':'medium', 'x.com':'twitter',
+    'github.com':'github', 'twitter.com':'twitter'
+  };
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="http"]');
+    if (!a) return;
+    try {
+      var host = (new URL(a.href, location.href)).hostname.replace('www.','');
+      var network = SOCIAL_MAP[host];
+      if (network) {
+        track('social_click', {
+          network: network,
+          location: a.closest('section')?.id || (a.closest('footer') ? 'footer' : 'unknown')
+        });
+      }
+    } catch (_) {}
+  });
+
+  /* 5. Email click */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="mailto:"]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    track('email_click', {
+      email_to: href.replace('mailto:','').split('?')[0],
+      mailto_subject: decodeURIComponent((href.split('subject=')[1] || '')),
+      location: a.closest('section')?.id || (a.closest('footer') ? 'footer' : 'unknown')
+    });
+  });
+
+  /* 6. Scroll depth */
+  var fired = {};
+  function checkScroll() {
+    var h = document.documentElement;
+    var pct = Math.round(((h.scrollTop + window.innerHeight) / h.scrollHeight) * 100);
+    [25, 50, 75, 90].forEach(function (mark) {
+      if (pct >= mark && !fired[mark]) {
+        fired[mark] = true;
+        track('scroll_depth', { percent: mark });
+      }
+    });
+  }
+  var t;
+  window.addEventListener('scroll', function () {
+    clearTimeout(t); t = setTimeout(checkScroll, 250);
+  }, { passive: true });
+
+  /* 7. Support click (utenti esistenti) */
+  document.querySelectorAll('a[href*="support/"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var card = a.closest('.app-card');
+      track('app_support_click', {
+        app_name: card?.querySelector('.app-name')?.innerText.trim() || 'unknown',
+        link_url: a.getAttribute('href')
+      });
+    });
+  });
+
+  /* 8. Nav click */
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('nav_click', {
+        target_section: a.getAttribute('href') || '',
+        link_text: (a.innerText || '').trim()
+      });
+    });
+  });
+
+  /* 9. App card view (IntersectionObserver) */
+  if ('IntersectionObserver' in window) {
+    var seen = new WeakSet();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting || seen.has(en.target)) return;
+        seen.add(en.target);
+        track('app_card_view', {
+          app_name:   en.target.querySelector('.app-name')?.innerText.trim() || 'unknown',
+          app_status: appStatus(en.target)
+        });
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.app-card').forEach(function (c) { io.observe(c); });
+  }
+})();
+</script>
+
+<!-- WhatsApp sticky button -->
+<a href="https://wa.me/393495605520?text=Ciao%20Michele%2C%20vorrei%20informazioni%20su%20Navolio%20App%20Studio"
+   target="_blank" rel="noopener"
+   title="Scrivimi su WhatsApp"
+   style="position:fixed;bottom:24px;right:24px;z-index:9999;background:#25D366;color:white;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);text-decoration:none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
 
 </body>
 </html>
