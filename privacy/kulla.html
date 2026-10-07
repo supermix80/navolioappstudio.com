@@ -93,6 +93,11 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
     <li>Nessun dato di pagamento (gestiti da Apple)</li>
     <li>Nessun SDK di analytics o statistiche di utilizzo inviati a server dello sviluppatore</li>
   </ul>
+  <h3>2.3 Dove compaiono e dove restano i dati</h3>
+  <ul>
+    <li>Il nome del bambino (se lo inserisci) e lo stato del timer compaiono nel widget e nella Live Activity, quindi anche a schermo bloccato.</li>
+    <li>I dati sul dispositivo sono inclusi nei backup di iOS (iCloud o computer), secondo le tue impostazioni.</li>
+  </ul>
   <div class="highlight-box"><p>L'indicazione sul fabbisogno giornaliero di latte (peso in kg × 150 ml) è un valore generico di orientamento, non una prescrizione né un parere medico: segui sempre le indicazioni del tuo pediatra.</p></div>
 
   <h2>3. Condivisione con l'altro genitore (facoltativa)</h2>
@@ -100,17 +105,18 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
   <ul>
     <li>Lo spazio condiviso si trova nel <strong>tuo iCloud</strong> (database privato CloudKit), non su server dello sviluppatore. La condivisione è limitata alle persone che inviti (nessun link pubblico).</li>
     <li>Vengono sincronizzati solo poppate e cambi. Il profilo del neonato (nome, data di nascita, peso) <strong>non</strong> viene sincronizzato.</li>
-    <li>I campi dei registri sono protetti con la <strong>cifratura dei valori di CloudKit</strong>. Navolio App Studio non ha alcun accesso a questi dati.</li>
-    <li>Chi accetta l'invito può leggere, modificare ed eliminare i registri condivisi. I registri scritti da chi accetta risiedono nell'iCloud di chi ha invitato.</li>
+    <li>Il contenuto dei registri è protetto con la <strong>cifratura dei valori di CloudKit</strong>; restano visibili ad Apple solo metadati tecnici (identificativo casuale, tipo di record, date di creazione e modifica). Navolio App Studio non ha alcun accesso a questi dati.</li>
+    <li>Chi accetta l'invito può leggere, modificare ed eliminare i registri condivisi, anche dal dispositivo di chi ha invitato: invita solo persone di cui ti fidi. I registri scritti da chi accetta risiedono nell'iCloud di chi ha invitato.</li>
+    <li>Se interrompi la condivisione dal foglio di sistema i dati restano nel tuo iCloud: per cancellarli usa <strong>Elimina famiglia</strong>.</li>
     <li><strong>Elimina famiglia</strong> (chi ha invitato) cancella lo spazio condiviso da iCloud e l'altro genitore perde l'accesso. <strong>Esci dalla famiglia</strong> (chi ha accettato) rimuove il suo accesso. In entrambi i casi le copie già presenti su ciascun dispositivo restano finché non le elimini (Impostazioni → Reset dati).</li>
-    <li>Le notifiche "il partner ha registrato…" sono generate sul tuo dispositivo, solo per eventi recenti, senza note né nome del bambino.</li>
+    <li>Le notifiche "il partner ha registrato…" sono generate sul tuo dispositivo, solo per eventi recenti, senza note né nome del bambino. Per accorgersi delle nuove registrazioni l'app riceve da iCloud avvisi silenziosi tramite il servizio di notifiche di Apple.</li>
     <li>La condivisione richiede un account iCloud e segue le condizioni e l'informativa di Apple (<a href="https://www.apple.com/legal/privacy/it/" target="_blank" rel="noopener">apple.com/legal/privacy</a>).</li>
   </ul>
 
   <h2>4. Pubblicità (Google AdMob)</h2>
   <p>Kulla mostra un <strong>banner pubblicitario fornito da Google AdMob</strong>. Per questo:</p>
   <ul>
-    <li>Dove richiesto (Spazio Economico Europeo, Regno Unito) ti chiediamo il consenso con il modulo di Google (UMP) e, su iOS, con la finestra di Apple <strong>App Tracking Transparency</strong>. Le richieste compaiono <strong>dopo la tua prima registrazione</strong>, non prima.</li>
+    <li>Il modulo di consenso di Google (UMP) compare dove richiesto (Spazio Economico Europeo, Regno Unito); la finestra di Apple <strong>App Tracking Transparency</strong> compare a tutti gli utenti iOS. Le richieste compaiono <strong>dopo la tua prima registrazione</strong>, non prima.</li>
     <li>Se acconsenti, AdMob può usare identificativi del dispositivo (inclusi l'identificativo pubblicitario), indirizzo IP, informazioni sul dispositivo e sull'interazione con gli annunci per mostrare annunci pertinenti e misurarne l'efficacia. Se rifiuti, gli annunci non sono personalizzati e, dove la normativa lo richiede, non vengono mostrati.</li>
     <li><strong>I dati di cura del tuo bambino (poppate, cambi, peso, note) non vengono mai condivisi con Google né usati per la pubblicità.</strong></li>
     <li>Puoi cambiare scelta in <strong>Impostazioni → Opzioni privacy pubblicità</strong> (dove disponibile) e in <strong>Impostazioni iOS → Privacy e sicurezza → Tracciamento</strong>.</li>
@@ -125,7 +131,7 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
   <ul>
     <li><strong>Notifiche:</strong> sono locali (generate dal dispositivo). Puoi revocare il permesso da Impostazioni iOS → Notifiche → Kulla.</li>
     <li><strong>Widget e Live Activity</strong> (timer della poppata) leggono i dati dal dispositivo.</li>
-    <li><strong>Siri e Comandi rapidi</strong> sono elaborati da Apple secondo le tue impostazioni; Kulla riceve solo il comando (es. "registra cambio").</li>
+    <li><strong>Siri e Comandi rapidi</strong> sono elaborati da Apple secondo le tue impostazioni; Kulla riceve il comando e i valori che detti (ml, tipo di cambio, colore).</li>
   </ul>
 
   <h2>7. Base giuridica (GDPR)</h2>
@@ -139,7 +145,7 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
   <table>
     <tr><th>Diritto</th><th>Come esercitarlo</th></tr>
     <tr><td>Accesso e rettifica</td><td>I dati sono visibili e modificabili direttamente nell'app (Storico)</td></tr>
-    <tr><td>Cancellazione</td><td>Elimina il singolo evento dallo Storico; Impostazioni → Reset dati per cancellare tutto sul dispositivo; Impostazioni → Famiglia → Elimina famiglia per cancellare i dati da iCloud</td></tr>
+    <tr><td>Cancellazione</td><td>Elimina il singolo evento dallo Storico. Impostazioni → Reset dati cancella registri e profilo sul dispositivo e, se hai creato tu la famiglia, elimina anche lo spazio condiviso in iCloud (l'altro genitore perde l'accesso). Impostazioni → Famiglia → Elimina famiglia cancella solo i dati in iCloud</td></tr>
     <tr><td>Revoca del consenso</td><td>Opzioni privacy pubblicità; Impostazioni iOS → Privacy e sicurezza → Tracciamento; Notifiche iOS</td></tr>
     <tr><td>Reclamo</td><td>Garante per la protezione dei dati personali: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a></td></tr>
   </table>
@@ -163,7 +169,7 @@ footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:v
   </ul>
 
   <h2>12. Modifiche alla Privacy Policy</h2>
-  <p>L'informativa può essere aggiornata; la versione corrente è sempre disponibile a questo indirizzo e riporta la data di aggiornamento. In caso di modifiche sostanziali ti informeremo nell'app.</p>
+  <p>L'informativa può essere aggiornata; la versione corrente è sempre disponibile a questo indirizzo e riporta la data di aggiornamento.</p>
 
   <h2>13. Contatti</h2>
   <p><strong>Michele Navolio — Navolio App Studio</strong><br>
