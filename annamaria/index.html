@@ -92,7 +92,6 @@
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="#valuation-form">Valutazione</a>
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="#contatti">Contatti</a>
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="./chi-sono.html">Chi Sono</a>
-<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="./chi-sono.html#testimonials">Recensioni</a>
 <a class="text-slate-600 dark:text-slate-400 font-medium hover:text-red-600 hover:scale-105 transition-all font-label" href="./faq.html">FAQ</a>
 </div>
 <button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-all active:scale-95" onclick="document.getElementById('valuation-form')?.scrollIntoView({ behavior: 'smooth' });">
@@ -111,18 +110,8 @@
                 Quanto vale la tua casa?
             </h1>
 <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10">
-                Ottieni una valutazione professionale gratuita da Annamaria Cerbone. La tua esperta RE/MAX Change per il mercato di Milano e Brugherio.
+                Ottieni una valutazione professionale gratuita da Annamaria Cerbone. La tua esperta RE/MAX Change per il mercato di Rozzano, Milano e Brugherio.
             </p>
-<div class="flex flex-col gap-4 sm:flex-row items-center">
-<div class="flex -space-x-3">
-<img alt="Utente" class="w-12 h-12 rounded-full border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByyXIaB_mJ-1SfSJ3TmEjBcGe_4DeNpusBpdZ7jaBz2ieeX4N4cLbN6U96F2CVGaTtI8TCWLFQgLD6JumCraKvdMLby3XrZ1CSD7JsUsZ02IhwdwTWTIQWxvp-wk6QImOIpLujgf2IGq_NlMxI8znqSrEbnIjy5sIgENt6uOWkwZO6QVglX-HCLzCJ8vtHapSTe857jDVT9HXPHeJ2dZMKu2DYnadDg_9oGUmkHCpSNVlOe7Xk0ucu0tRCXRuw-nlJ1jSZnGhzUVc"/>
-<img alt="Utente" class="w-12 h-12 rounded-full border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgN4UEf8znqYhN6OqfAZL0Wikp5go43KjCkgUXE8sszKJt93tuG_2fheY47B2eM0ar8lEXqyefAjSdiExXHVTOPfhZFBY9a_V_Nw3-B2m03sRZgAGd3zRhK8HKeNOt2q2VTmP4hSvYnrr9zFbEhvHQeisIEkBXv9QF6l_RCp4FhsojlNz51jZsnY7ckB2BXbeoRj5QjDqqhgFEQQwlbQldov46DSrrEynxegZZtXgLnfKpPaAoi2AO8-Cb5t0P6Gcj0-LQghSZZvk"/>
-<img alt="Utente" class="w-12 h-12 rounded-full border-4 border-surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg294MWAWKEKeT0gzfH6jVtX-zUBPtPpyNZjm9KgroqeDLGnj3ezHqkJHKwq_sPeVw94WOlCoIOthypkbOjaZ41ATJ1h7BMYM_QYXhN_NVosF4_iRC936ajwxV18haYPLmb7PV8fPOQhHIHEx4bqGUeNrzdZ5_S89813ZQVrzvZ5TwB1gmi1VOaVWs18yCB3o_0uT8LGFYr4lUXJCIghCQPxme5h44C4zlqdRFkWPIMDJKu8F37l7PHhs-QD7GYcCyzKPYYTUX7Yc"/>
-</div>
-<p class="text-sm font-medium text-on-surface-variant">
-                    Oltre <span class="text-primary font-bold">500+ proprietari</span> hanno già richiesto una consulenza quest'anno.
-                </p>
-</div>
 </div>
 <!-- Valuation Form Card -->
 <div class="bg-surface-container-lowest p-8 md:p-10 rounded-xl shadow-2xl shadow-on-surface/5 editorial-shadow border border-outline-variant/15">
@@ -180,13 +169,33 @@
 <label class="block text-sm font-semibold text-on-surface-variant mb-1">Note</label>
 <textarea class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="lead-notes" name="notes" placeholder="Dettagli aggiuntivi..." rows="2"></textarea>
 </div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1" for="lead-referral">Come mi hai conosciuta?</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="lead-referral" name="referral">
+<option value="">Preferisco non dirlo</option>
+<option value="passaparola">Passaparola</option>
+<option value="google">Ricerca su Google</option>
+<option value="social">Instagram o Facebook</option>
+<option value="portale">Portale immobiliare</option>
+<option value="cartello_volantino">Cartello o volantino</option>
+<option value="open_house">Open house</option>
+<option value="altro">Altro</option>
+</select>
+</div>
+<div class="space-y-2 text-xs text-on-surface-variant leading-snug">
+<label class="flex items-start gap-2">
+<input class="mt-0.5" id="lead-privacy" name="privacy" required="" type="checkbox"/>
+<span>Ho letto l'<a class="underline" href="privacy.html">Informativa sulla Privacy</a> e chiedo di essere ricontattato per questa richiesta.</span>
+</label>
+<label class="flex items-start gap-2">
+<input class="mt-0.5" id="lead-marketing" name="marketing" type="checkbox"/>
+<span>Facoltativo: acconsento a ricevere aggiornamenti sul mercato immobiliare della mia zona.</span>
+</label>
+</div>
 <button class="w-full py-3.5 rounded-md bg-gradient-to-br from-primary to-primary-container text-white font-bold text-lg shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
                         Invia Richiesta
                     </button>
 <p class="hidden text-sm font-semibold" id="form-feedback"></p>
-<p class="text-[10px] text-center text-outline leading-tight mt-2">
-                        Inviando il modulo accetti la nostra Informativa sulla Privacy. I tuoi dati saranno trattati con la massima riservatezza.
-                    </p>
 </div>
 </form>
 
@@ -251,13 +260,33 @@
 <label class="block text-sm font-semibold text-on-surface-variant mb-1">Requisiti specifici</label>
 <textarea class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all placeholder:text-outline" id="buy-notes" name="notes" placeholder="Terrazzo, box auto, piano alto, giardino, ascensore..." rows="2"></textarea>
 </div>
+<div>
+<label class="block text-sm font-semibold text-on-surface-variant mb-1" for="buy-referral">Come mi hai conosciuta?</label>
+<select class="w-full px-4 py-2.5 rounded-md bg-surface-container-low border-none focus:ring-2 focus:ring-secondary transition-all" id="buy-referral" name="referral">
+<option value="">Preferisco non dirlo</option>
+<option value="passaparola">Passaparola</option>
+<option value="google">Ricerca su Google</option>
+<option value="social">Instagram o Facebook</option>
+<option value="portale">Portale immobiliare</option>
+<option value="cartello_volantino">Cartello o volantino</option>
+<option value="open_house">Open house</option>
+<option value="altro">Altro</option>
+</select>
+</div>
+<div class="space-y-2 text-xs text-on-surface-variant leading-snug">
+<label class="flex items-start gap-2">
+<input class="mt-0.5" id="buy-privacy" name="privacy" required="" type="checkbox"/>
+<span>Ho letto l'<a class="underline" href="privacy.html">Informativa sulla Privacy</a> e chiedo di essere ricontattato per questa richiesta.</span>
+</label>
+<label class="flex items-start gap-2">
+<input class="mt-0.5" id="buy-marketing" name="marketing" type="checkbox"/>
+<span>Facoltativo: acconsento a ricevere aggiornamenti sul mercato immobiliare della mia zona.</span>
+</label>
+</div>
 <button class="w-full py-3.5 rounded-md bg-gradient-to-br from-secondary to-tertiary text-white font-bold text-lg shadow-lg shadow-secondary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" type="submit">
                         Invia Richiesta
                     </button>
 <p class="hidden text-sm font-semibold" id="search-form-feedback"></p>
-<p class="text-[10px] text-center text-outline leading-tight mt-2">
-                        Inviando il modulo accetti la nostra Informativa sulla Privacy. I tuoi dati saranno trattati con la massima riservatezza.
-                    </p>
 </div>
 </form>
 </div>
@@ -268,32 +297,22 @@
 <div class="container mx-auto px-6">
 <div class="grid lg:grid-cols-12 gap-16 items-center">
 <div class="lg:col-span-5 relative">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
-<img class="w-full h-full object-cover" data-alt="Ritratto professionale di Annamaria Cerbone, agente immobiliare con un'espressione sicura e amichevole, in abbigliamento professionale in un ufficio luminoso" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjadDSdPqDWaKtyoebcyAHK5Q_2S--lj9NNuVFLpS4idyROxoYAG-YrHmXGorNsjFdFoaXVrLEfhQ5Q6lreh113ygETbZQmk0W4WwpPOIVE4ZbW2kByQj4j7OY1nuepcbuKQQT1bR5kGgYEqVac0QvvdQB8W3nP7tvuh1O4Mdyj7AFp2kH4zXc0cTDIt0PzXgH6TclDtA1I71umsg7wllyG0ucS97HPQrYPEL3et4jsEsmD5F3g21BdFz8xhMFMjNfqgtfMWiBcmA"/>
+<div class="aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10">
+<img class="w-full h-full object-cover" alt="Annamaria Cerbone, consulente immobiliare RE/MAX Change" src="./annamaria-cerbone.jpeg"/>
 </div>
 <div class="absolute -top-10 -left-10 w-full h-full bg-secondary-fixed rounded-2xl -z-10 opacity-50"></div>
 </div>
 <div class="lg:col-span-7">
 <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Personal Agent</span>
 <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-8 leading-tight">
-                    Annamaria Cerbone: <br/><span class="text-secondary">Esperienza e Passione</span> nel cuore di Milano.
+                    Annamaria Cerbone: <br/><span class="text-secondary">Ascolto e Metodo</span> nel cuore di Milano.
                 </h2>
 <p class="text-lg text-on-surface-variant leading-relaxed mb-6">
-                    Con anni di esperienza nel settore immobiliare di alto livello, ho dedicato la mia carriera ad aiutare le persone a realizzare il loro sogno di casa. La mia missione non è solo vendere immobili, ma costruire relazioni di fiducia durature.
+                    Il mio lavoro è aiutare le persone a realizzare il loro sogno di casa. La mia missione non è solo vendere immobili, ma costruire relazioni di fiducia durature.
                 </p>
 <p class="text-lg text-on-surface-variant leading-relaxed mb-10">
                     Specializzata nelle zone di Milano e nell'hinterland, offro una consulenza personalizzata che unisce l'analisi meticolosa dei dati del mercato locale alla sensibilità umana necessaria per ogni transazione.
                 </p>
-<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/30 pt-10">
-<div>
-<div class="text-3xl font-bold text-primary font-headline mb-1">2+</div>
-<div class="text-sm font-medium text-on-surface-variant">Anni di Esperienza</div>
-</div>
-<div>
-<div class="text-3xl font-bold text-primary font-headline mb-1">98%</div>
-<div class="text-sm font-medium text-on-surface-variant">Clienti Soddisfatti</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -378,17 +397,17 @@
 <div class="md:w-1/2 p-12 lg:p-16">
 <h2 class="font-headline text-3xl font-bold mb-8 text-on-surface">Parliamo del tuo futuro.</h2>
 <div class="space-y-6">
-<a class="flex items-center gap-4 group" href="tel:+390391234567">
+<a class="flex items-center gap-4 group" href="tel:+393336436979">
 <div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-secondary">call</span>
 </div>
-<span class="text-lg font-semibold text-on-surface">+39 039 123 4567</span>
+<span class="text-lg font-semibold text-on-surface">+39 333 643 6979</span>
 </a>
-<a class="flex items-center gap-4 group" href="mailto:acerbone@remax.it">
+<a class="flex items-center gap-4 group" href="mailto:supermix@hotmail.it">
 <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-primary">mail</span>
 </div>
-<span class="text-lg font-semibold text-on-surface">acerbone@remax.it</span>
+<span class="text-lg font-semibold text-on-surface">supermix@hotmail.it</span>
 </a>
 <a class="flex items-center gap-4 group" href="https://www.remax.it/trova-agenzia/change" rel="noopener" target="_blank">
 <div class="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -430,7 +449,7 @@
 <ul class="space-y-4 text-sm">
 <li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="./privacy.html">Privacy Policy</a></li>
 <li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="./faq.html">FAQ</a></li>
-<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="mailto:acerbone@remax.it">Contatti</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-red-600 transition-colors" href="mailto:supermix@hotmail.it">Contatti</a></li>
 </ul>
 </div>
 <div>
@@ -444,7 +463,7 @@
 </div>
 <div class="max-w-7xl mx-auto px-8 mt-20 pt-8 border-t border-slate-200 dark:border-slate-800">
 <p class="text-xs text-slate-500 dark:text-slate-400 text-center">
-            © 2024 Annamaria Cerbone. Ogni agenzia RE/MAX® è autonoma e indipendente.
+            © 2026 Annamaria Cerbone. Ogni agenzia RE/MAX® è autonoma e indipendente.
         </p>
 </div>
 </footer>
@@ -485,6 +504,22 @@ function setFormFeedback(feedbackEl, message, isError) {
   feedbackEl.classList.add(isError ? "text-error" : "text-primary");
 }
 
+// === Provenienza della visita (link dei social e delle campagne) ===
+const parametriUrl = new URLSearchParams(window.location.search);
+const utmSource = parametriUrl.get("utm_source");
+const utmCampaign = parametriUrl.get("utm_campaign");
+
+// Consensi e provenienza dichiarata, uguali per i due form
+function campiComuni(prefisso) {
+  return {
+    channel: utmSource || "website",
+    campaign: utmCampaign || null,
+    referralSource: document.getElementById(`${prefisso}-referral`)?.value || null,
+    privacyConsent: document.getElementById(`${prefisso}-privacy`)?.checked === true,
+    marketingConsent: document.getElementById(`${prefisso}-marketing`)?.checked === true
+  };
+}
+
 // === Invio generico al backend ===
 async function submitLead(payload, feedbackEl, formEl) {
   try {
@@ -505,7 +540,7 @@ async function submitLead(payload, feedbackEl, formEl) {
     }
 
     formEl.reset();
-    setFormFeedback(feedbackEl, "Richiesta inviata. Il lead è stato creato nel CRM.", false);
+    setFormFeedback(feedbackEl, "Richiesta inviata. Annamaria ti ricontatterà al più presto.", false);
   } catch (error) {
     setFormFeedback(feedbackEl, error instanceof Error ? error.message : "Errore durante l'invio.", true);
   }
@@ -527,7 +562,7 @@ sellForm?.addEventListener("submit", async (event) => {
     urgency: document.getElementById("lead-urgency")?.value,
     notes: document.getElementById("lead-notes")?.value?.trim(),
     source: "landing_public_valuation",
-    channel: "website",
+    ...campiComuni("lead"),
     agent: "Annamaria Cerbone",
     agency: "RE/MAX Change",
     date: new Date().toISOString()
@@ -564,7 +599,7 @@ buyForm?.addEventListener("submit", async (event) => {
     urgency: document.getElementById("buy-urgency")?.value,
     notes: fullNotes,
     source: "landing_public_search",
-    channel: "website",
+    ...campiComuni("buy"),
     agent: "Annamaria Cerbone",
     agency: "RE/MAX Change",
     date: new Date().toISOString()
