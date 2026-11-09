@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supporto — PapaAttende · Navolio App Studio</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--bg:#0a0c10;--bg2:#111318;--border:#1e2530;--text:#edf2f7;--muted:#7a8694;--gold:#fbbf24;--green:#34d399;--radius:14px;}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{background:rgba(10,12,16,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 clamp(20px,5vw,80px);height:60px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700;font-size:16px;}
+.nav-logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#fbbf24,#e67e22);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.nav-back{font-size:14px;color:var(--muted);text-decoration:none;}
+.nav-back:hover{color:var(--text);}
+main{max-width:760px;margin:0 auto;padding:clamp(40px,8vw,80px) clamp(20px,5vw,40px);}
+.app-header{display:flex;align-items:center;gap:18px;margin-bottom:40px;padding:24px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);}
+.app-icon{width:56px;height:56px;border-radius:14px;background:rgba(200,16,46,0.15);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;}
+.app-info h1{font-size:22px;font-weight:800;margin-bottom:4px;}
+.app-info p{font-size:14px;color:var(--muted);}
+h2{font-size:20px;font-weight:800;margin:36px 0 14px;}
+p,li{font-size:16px;color:var(--muted);margin-bottom:12px;}
+ul{padding-left:24px;margin-bottom:16px;}
+li{margin-bottom:8px;}
+strong{color:var(--text);font-weight:600;}
+.faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;margin-bottom:12px;}
+.faq-q{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.faq-a{font-size:15px;color:var(--muted);margin:0;}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;margin-top:40px;}
+.contact-card h3{font-size:20px;font-weight:800;margin-bottom:10px;}
+.contact-card p{color:var(--muted);margin-bottom:20px;}
+.contact-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fbbf24,#e67e22);color:#0a0c10;font-size:15px;font-weight:700;padding:12px 24px;border-radius:10px;text-decoration:none;transition:opacity .2s;}
+.contact-btn:hover{opacity:.9;}
+a{color:var(--gold);text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{text-align:center;padding:32px;border-top:1px solid var(--border);color:var(--muted);font-size:13px;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">⚡</div>
+    Navolio App Studio
+  </a>
+  <a href="/" class="nav-back">← Home</a>
+</nav>
+
+<main>
+  <div class="app-header">
+    <div class="app-icon">👨‍👧</div>
+    <div class="app-info">
+      <h1>PapaAttende — Supporto</h1>
+      <p>Navolio App Studio · Versione 1.0 · iOS 17+</p>
+    </div>
+  </div>
+
+  <h2>Domande frequenti</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">Cos'è PapaAttende?</div>
+    <div class="faq-a">Un'app per i futuri papà: per ognuna delle 40 settimane di gravidanza ha tre brevi letture (il bambino, lei, tu) e una checklist di gesti pratici. È un'app divulgativa e non sostituisce il parere del medico.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Cosa è gratis e cosa si paga?</div>
+    <div class="faq-a">Le prime 12 settimane sono gratuite. Le settimane dalla 13 alla 40 si sbloccano con un unico acquisto, pagato una sola volta. Non è un abbonamento e non si rinnova.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Ho già pagato ma le settimane sono bloccate</div>
+    <div class="faq-a">Vai in Impostazioni → Ripristina acquisto. Serve usare lo stesso Apple ID con cui hai acquistato. Se il problema continua, scrivici.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come cambio la settimana di gravidanza o la data di inizio?</div>
+    <div class="faq-a">Vai in Impostazioni → Data inizio e imposta la data dell'ultima mestruazione: l'app calcola da sola la settimana corrente.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Dove vengono salvati i miei dati?</div>
+    <div class="faq-a">Solo sul tuo iPhone. Non c'è nessun account, nessuna pubblicità e nessun tracciamento. Dettagli nella Privacy Policy.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Come cancello i miei dati?</div>
+    <div class="faq-a">Vai in Impostazioni → Resetta tutto: elimina settimana, data di inizio, checklist e check-in emotivi, e non si può annullare. Anche disinstallare l'app cancella i dati.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Posso cambiare lingua o tema?</div>
+    <div class="faq-a">L'app segue la lingua del tuo iPhone ed è disponibile in 11 lingue. Il tema chiaro, scuro o automatico si sceglie in Impostazioni → Aspetto.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Ricevo notifiche?</div>
+    <div class="faq-a">Se le autorizzi, l'app può inviare un promemoria settimanale. Puoi gestirle in Impostazioni di iOS → Notifiche → PapaAttende.</div>
+  </div>
+
+  <div class="contact-card">
+    <h3>Hai ancora bisogno di aiuto?</h3>
+    <p>Scrivici: rispondiamo appena possibile.</p>
+    <a href="mailto:info@navolioappstudio.com?subject=PapaAttende%20Supporto" class="contact-btn">✉️ Contatta il supporto</a>
+  </div>
+
+</main>
+
+<footer>© 2026 Navolio App Studio · Michele Navolio · <a href="/privacy/papaattende.html">Privacy Policy</a></footer>
+</body>
+</html>
